@@ -694,6 +694,7 @@ pytest --cov=ppf
 
 ---
 
+<!--- 
 # Citation
 
 If you use this framework in academic work, please cite:
@@ -750,3 +751,4 @@ This project draws inspiration from established privacy and security standards, 
 ## Project Status
 
 **Privacy Posture Framework** is an active research and engineering project focused on advancing policy-driven privacy posture assessment through reproducible modelling, simulation, monitoring, and evaluation. Contributions, discussions, and research collaborations are welcome.
+and --->
