@@ -256,44 +256,136 @@ Measure
 
 ```
 privacy-posture-framework/
-
+│
+├── README.md
+├── LICENSE
+├── pyproject.toml
+├── requirements.txt
+├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
+│
 ├── docs/
-│   Documentation
+│   ├── architecture.md
+│   ├── schema.md
+│   ├── manifests.md
+│   ├── checker.md
+│   ├── simulator.md
+│   ├── monitor.md
+│   ├── evaluation.md
+│   └── diagrams/
+│       ├── architecture.png
+│       ├── asset_graph.png
+│       └── workflow.png
 │
 ├── configs/
-│   Organisation configurations
+│   ├── default.yaml
+│   ├── gp_surgery.yaml
+│   ├── school.yaml
+│   └── hotel.yaml
 │
 ├── manifests/
-│   Privacy manifests
+│   ├── rules.yaml
+│   ├── gp_manifest.yaml
+│   ├── school_manifest.yaml
+│   └── hotel_manifest.yaml
 │
-├── src/ppf/
+├── data/
+│   ├── logs/
+│   ├── reports/
+│   └── samples/
 │
-│   schema/
-│      Privacy schema
-│
-│   manifests/
-│      Manifest compiler
-│
-│   checker/
-│      Privacy checker
-│
-│   simulator/
-│      Workflow simulator
-│
-│   monitor/
-│      Runtime monitoring
-│
-│   evaluation/
-│      Metrics and benchmarks
-│
-│   utils/
-│      Helper utilities
+├── src/
+│   └── ppf/
+│       ├── __init__.py
+│       ├── cli.py
+│       │
+│       ├── schema/
+│       │   ├── __init__.py
+│       │   ├── models.py
+│       │   ├── parser.py
+│       │   ├── validator.py
+│       │   ├── ontology.py
+│       │   └── enums.py
+│       │
+│       ├── manifests/
+│       │   ├── __init__.py
+│       │   ├── loader.py
+│       │   ├── compiler.py
+│       │   └── generator.py
+│       │
+│       ├── checker/
+│       │   ├── __init__.py
+│       │   ├── checker.py
+│       │   ├── report.py
+│       │   ├── posture.py
+│       │   ├── engine.py
+│       │   └── rules/
+│       │       ├── __init__.py
+│       │       ├── base_rule.py
+│       │       ├── encryption.py
+│       │       ├── authentication.py
+│       │       ├── retention.py
+│       │       ├── deletion.py
+│       │       ├── sharing.py
+│       │       ├── access.py
+│       │       ├── consent.py
+│       │       └── minimisation.py
+│       │
+│       ├── simulator/
+│       │   ├── __init__.py
+│       │   ├── graph.py
+│       │   ├── fsm.py
+│       │   ├── workflow.py
+│       │   ├── actors.py
+│       │   ├── generator.py
+│       │   ├── logger.py
+│       │   └── scenarios/
+│       │       ├── __init__.py
+│       │       ├── gp.py
+│       │       ├── school.py
+│       │       └── hotel.py
+│       │
+│       ├── monitor/
+│       │   ├── __init__.py
+│       │   ├── lifecycle.py
+│       │   ├── monitor.py
+│       │   ├── alerts.py
+│       │   ├── compliance.py
+│       │   └── correlation.py
+│       │
+│       ├── evaluation/
+│       │   ├── __init__.py
+│       │   ├── metrics.py
+│       │   ├── benchmark.py
+│       │   ├── experiments.py
+│       │   ├── plots.py
+│       │   └── posture_score.py
+│       │
+│       └── utils/
+│           ├── __init__.py
+│           ├── logging.py
+│           ├── yaml.py
+│           ├── graph.py
+│           └── timer.py
 │
 ├── tests/
+│   ├── schema/
+│   ├── checker/
+│   ├── simulator/
+│   ├── monitor/
+│   └── evaluation/
 │
 ├── notebooks/
+│   ├── experiment1.ipynb
+│   ├── experiment2.ipynb
+│   ├── experiment3.ipynb
+│   └── benchmark.ipynb
 │
 └── examples/
+    ├── gp_demo.py
+    ├── school_demo.py
+    └── hotel_demo.py
 ```
 
 ---
