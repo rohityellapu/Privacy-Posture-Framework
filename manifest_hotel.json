@@ -1,0 +1,77 @@
+{
+  "manifest_id": "MAN-UC003",
+  "use_case_id": "UC003",
+  "use_case_name": "Hotel",
+  "manifest_version": "1.0",
+  "created_date": "2026-08-10",
+  "description": "Privacy posture manifest declaring required controls for a hotel operation processing guest personal and financial data. Aligned with GDPR, UK DPA 2018, and PCI-DSS.",
+  "required_controls": {
+    "encryption": {
+      "at_rest_required": true,
+      "at_rest_min_algorithm": "AES-256",
+      "in_transit_required": true,
+      "in_transit_min_protocol": "TLS 1.2",
+      "key_rotation_max_days": 90
+    },
+    "authentication": {
+      "mfa_required": true,
+      "min_password_length": 10,
+      "session_timeout_max_minutes": 60
+    },
+    "access_control": {
+      "rbac_required": true,
+      "least_privilege_required": true,
+      "audit_logging_required": true
+    },
+    "pseudonymisation": {
+      "required": false,
+      "acceptable_techniques": ["tokenisation"]
+    },
+    "policies": {
+      "privacy_policy_published": true,
+      "data_retention_policy": true,
+      "breach_response_plan": true,
+      "staff_training": true,
+      "dsar_procedure": true,
+      "pci_dss_compliance": true
+    },
+    "consent": {
+      "explicit_consent_required": false,
+      "marketing_consent_required": true,
+      "withdrawal_mechanism_required": true,
+      "consent_audit_trail_required": false
+    },
+    "data_flows": {
+      "collection": {"consent_at_collection": false, "lawful_basis_contract": true, "data_minimisation": true},
+      "storage": {"encrypted": true, "geographic_restriction": "EU_UK", "weekly_backup": true},
+      "access": {"logged": true, "authenticated": true, "role_restricted": true},
+      "sharing": {"dpa_required": true, "legal_basis_documented": true},
+      "retention": {"guest_records_max_years": 3, "financial_records_max_years": 7, "cctv_max_days": 30},
+      "deletion": {"secure_deletion": true, "audit_trail": true}
+    },
+    "data_categories_allowed": [
+      "full_name", "email_address", "phone_number", "postal_address", "date_of_birth",
+      "passport_number", "credit_card_number", "booking_reference", "room_number",
+      "check_in_date", "check_out_date", "loyalty_programme_id", "meal_preferences",
+      "nationality", "ip_address"
+    ],
+    "special_category_data": {
+      "biometric_cctv_permitted": true,
+      "meal_preferences_as_religious_indicator": "minimise",
+      "lawful_basis_required": "Article 6(1)(b) GDPR - contract performance"
+    },
+    "compliance_standards": ["GDPR", "UK_DPA_2018", "PCI_DSS"],
+    "dpo_required": false,
+    "pia_required": false
+  },
+  "non_negotiable_controls": [
+    "at_rest_encryption",
+    "in_transit_encryption",
+    "rbac",
+    "access_audit_logging",
+    "pci_dss_payment_handling",
+    "breach_response_plan",
+    "data_retention_policy",
+    "dsar_procedure"
+  ]
+}

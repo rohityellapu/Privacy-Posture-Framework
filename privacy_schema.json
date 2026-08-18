@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "schema_name": "Privacy Posture Framework Schema",
+  "description": "A comprehensive privacy schema for organisational privacy posture management, informed by GDPR, the DEAR framework, and privacy-by-design principles.",
+  "environment": {
+    "description": "Organisational environment controls applied to protect personal data.",
+    "controls": {
+      "encryption": {
+        "at_rest": {
+          "required": true,
+          "algorithms": ["AES-256-GCM", "RSA-4096"],
+          "scope": ["databases", "file_stores", "backups", "logs"]
+        },
+        "in_transit": {
+          "required": true,
+          "protocols": ["TLS 1.2", "TLS 1.3"],
+          "certificate_management": "automated",
+          "scope": ["api", "web", "internal_services", "email"]
+        },
+        "key_management": {
+          "rotation_days": 90,
+          "hsm_required": false,
+          "key_escrow": false
+        }
+      },
+      "authentication": {
+        "mfa_required": true,
+        "mfa_methods": ["totp", "hardware_token", "sms"],
+        "password_policy": {
+          "min_length": 12,
+          "complexity": "high",
+          "max_age_days": 90,
+          "history_count": 12
+        },
+        "session_policy": {
+          "timeout_minutes": 30,
+          "concurrent_sessions": 1,
+          "idle_lockout_minutes": 15
+        }
+      },
+      "access_control": {
+        "model": "RBAC",
+        "principle_of_least_privilege": true,
+        "need_to_know": true,
+        "separation_of_duties": true,
+        "privileged_access_management": true,
+        "audit_logging": true
+      },
+      "anonymisation_pseudonymisation": {
+        "pseudonymisation_required": true,
+        "techniques": ["tokenisation", "hashing", "k-anonymity", "differential_privacy"],
+        "de_identification_standard": "ISO 29101"
+      },
+      "policies": {
+        "privacy_policy_published": true,
+        "data_retention_policy": true,
+        "cookie_policy": true,
+        "data_processing_agreements": true,
+        "data_breach_response_plan": true,
+        "privacy_impact_assessment": true,
+        "staff_training_required": true,
+        "data_subject_rights_procedure": true
+      },
+      "consent_management": {
+        "explicit_consent_required": true,
+        "consent_withdrawal_mechanism": true,
+        "consent_audit_trail": true,
+        "granular_consent": true
+      },
+      "audit_and_logging": {
+        "access_logs": true,
+        "change_logs": true,
+        "deletion_logs": true,
+        "sharing_logs": true,
+        "retention_period_days": 365,
+        "tamper_proof": true
+      }
+    }
+  },
+  "system": {
+    "description": "System-level infrastructure, assets, and interconnections relevant to personal data handling.",
+    "infrastructure": {
+      "deployment_models": ["on-premise", "cloud", "hybrid"],
+      "cloud_providers": [],
+      "network_zones": {
+        "public": {"internet_facing": true, "personal_data_allowed": false},
+        "dmz": {"internet_facing": true, "personal_data_allowed": false},
+        "internal": {"internet_facing": false, "personal_data_allowed": true},
+        "restricted": {"internet_facing": false, "personal_data_allowed": true, "extra_controls": true}
+      },
+      "security_controls": {
+        "firewall": true,
+        "ids_ips": true,
+        "waf": true,
+        "vpn": true,
+        "dlp": true
+      }
+    },
+    "assets": {
+      "data_stores": [],
+      "applications": [],
+      "services": [],
+      "endpoints": []
+    },
+    "interconnections": {
+      "internal_systems": [],
+      "external_partners": [],
+      "third_party_processors": [],
+      "regulatory_bodies": []
+    }
+  },
+  "data_flows": {
+    "description": "Lifecycle stages of personal data movement within the system.",
+    "stages": {
+      "collection": {
+        "allowed_methods": ["web_form", "api", "manual_entry", "automated_sensor"],
+        "consent_required": true,
+        "purpose_specification_required": true,
+        "data_minimisation_required": true
+      },
+      "storage": {
+        "encryption_required": true,
+        "access_control_required": true,
+        "backup_policy": true,
+        "geographic_restrictions": []
+      },
+      "access": {
+        "authentication_required": true,
+        "authorisation_required": true,
+        "logging_required": true,
+        "purpose_limitation": true
+      },
+      "sharing": {
+        "dpa_required": true,
+        "consent_required": false,
+        "legal_basis_required": true,
+        "recipient_categories": [],
+        "cross_border_transfer_controls": true
+      },
+      "retention": {
+        "max_retention_period_days": null,
+        "review_interval_days": 365,
+        "legal_hold_mechanism": true,
+        "automated_review": false
+      },
+      "deletion": {
+        "right_to_erasure_supported": true,
+        "secure_deletion_method": "DoD 5220.22-M",
+        "deletion_confirmation_required": true,
+        "deletion_audit_trail": true
+      }
+    }
+  },
+  "personal_data": {
+    "description": "Classification of personal data types handled, informed by the DEAR framework and GDPR Article 9.",
+    "dear_inspired_categories": {
+      "direct_identifiers": {
+        "description": "Data that directly identifies a natural person.",
+        "types": ["full_name", "national_id_number", "passport_number", "driving_licence_number", "date_of_birth", "email_address", "phone_number", "postal_address", "ip_address", "user_account_id"]
+      },
+      "quasi_identifiers": {
+        "description": "Data that can identify a person when combined with other data.",
+        "types": ["age", "postcode", "gender", "occupation", "employer", "nationality", "marital_status"]
+      },
+      "sensitive_attributes": {
+        "description": "Special category data under GDPR Article 9.",
+        "types": ["racial_or_ethnic_origin", "political_opinions", "religious_beliefs", "trade_union_membership", "genetic_data", "biometric_data", "health_data", "sexual_orientation", "criminal_convictions"]
+      },
+      "financial_data": {
+        "description": "Financial personal data.",
+        "types": ["credit_card_number", "bank_account_number", "sort_code", "payment_history", "credit_score", "salary", "tax_information"]
+      },
+      "behavioural_data": {
+        "description": "Data derived from individual behaviour or activity.",
+        "types": ["browsing_history", "purchase_history", "location_history", "device_usage_patterns", "activity_logs", "access_logs"]
+      },
+      "derived_data": {
+        "description": "Data inferred or computed from other personal data.",
+        "types": ["risk_scores", "behavioural_profiles", "preference_models", "predictive_analytics_outputs"]
+      },
+      "educational_data": {
+        "description": "Data related to educational records.",
+        "types": ["student_id", "grades", "attendance_records", "disciplinary_records", "special_educational_needs", "examination_results"]
+      },
+      "professional_data": {
+        "description": "Workplace-related personal data.",
+        "types": ["employee_id", "job_title", "salary", "performance_reviews", "contract_details", "work_schedule"]
+      },
+      "health_clinical_data": {
+        "description": "Medical and clinical personal data.",
+        "types": ["patient_id", "medical_record_number", "diagnosis", "prescriptions", "allergies", "treatment_history", "lab_results", "vaccination_records"]
+      },
+      "hospitality_data": {
+        "description": "Data collected in hospitality and accommodation contexts.",
+        "types": ["booking_reference", "room_number", "check_in_date", "check_out_date", "loyalty_programme_id", "meal_preferences", "special_requests"]
+      }
+    },
+    "sensitivity_levels": {
+      "level_1_public": ["first_name", "general_location"],
+      "level_2_internal": ["email_address", "phone_number", "postal_address", "date_of_birth"],
+      "level_3_confidential": ["national_id", "financial_data", "health_data_general"],
+      "level_4_restricted": ["special_category_data", "biometric_data", "criminal_records", "detailed_health_data"]
+    }
+  }
+}

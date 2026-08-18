@@ -1,0 +1,188 @@
+{
+  "report_id": "CHK-UC003-20260810181135",
+  "use_case_id": "UC003",
+  "use_case_name": "Hotel",
+  "manifest_id": "MAN-UC003",
+  "checked_at": "2026-08-10T18:11:35.164569",
+  "summary": {
+    "total_checks": 27,
+    "pass": 14,
+    "fail": 12,
+    "warning": 0,
+    "info": 1,
+    "posture_score_percent": 53.8,
+    "posture_rating": "WEAK",
+    "critical_failures": 3
+  },
+  "findings": [
+    {
+      "control": "encryption.at_rest",
+      "status": "PASS",
+      "detail": "Encryption at rest is enabled."
+    },
+    {
+      "control": "encryption.in_transit_protocol",
+      "status": "PASS",
+      "detail": "Protocol TLS 1.2 meets minimum TLS 1.2."
+    },
+    {
+      "control": "encryption.key_rotation",
+      "status": "PASS",
+      "detail": "Key rotation every 90 days meets maximum 90 days."
+    },
+    {
+      "control": "authentication.mfa",
+      "status": "FAIL",
+      "detail": "MFA is REQUIRED but NOT enabled.",
+      "severity": "critical"
+    },
+    {
+      "control": "authentication.password_length",
+      "status": "PASS",
+      "detail": "Password min length 10 meets required 10."
+    },
+    {
+      "control": "authentication.session_timeout",
+      "status": "PASS",
+      "detail": "Session timeout 60 min meets maximum 60 min."
+    },
+    {
+      "control": "access_control.model",
+      "status": "PASS",
+      "detail": "Access control model is RBAC."
+    },
+    {
+      "control": "access_control.least_privilege",
+      "status": "FAIL",
+      "detail": "'least_privilege' is REQUIRED but not satisfied (found: False).",
+      "severity": "high"
+    },
+    {
+      "control": "access_control.audit_logging",
+      "status": "PASS",
+      "detail": "Audit logging is enabled."
+    },
+    {
+      "control": "pseudonymisation.enabled",
+      "status": "INFO",
+      "detail": "Pseudonymisation not required for this use case."
+    },
+    {
+      "control": "policies.privacy_policy_published",
+      "status": "PASS",
+      "detail": "Policy 'privacy_policy_published' is in place."
+    },
+    {
+      "control": "policies.data_retention_policy",
+      "status": "FAIL",
+      "detail": "Policy 'data_retention_policy' is REQUIRED but NOT implemented.",
+      "severity": "medium"
+    },
+    {
+      "control": "policies.breach_response_plan",
+      "status": "FAIL",
+      "detail": "Policy 'breach_response_plan' is REQUIRED but NOT implemented.",
+      "severity": "medium"
+    },
+    {
+      "control": "policies.staff_training",
+      "status": "FAIL",
+      "detail": "Policy 'staff_training' is REQUIRED but NOT implemented.",
+      "severity": "medium"
+    },
+    {
+      "control": "policies.dsar_procedure",
+      "status": "FAIL",
+      "detail": "Policy 'dsar_procedure' is REQUIRED but NOT implemented.",
+      "severity": "medium"
+    },
+    {
+      "control": "consent.withdrawal_mechanism_required",
+      "status": "FAIL",
+      "detail": "Consent control 'withdrawal_mechanism_required' is REQUIRED but NOT implemented.",
+      "severity": "high"
+    },
+    {
+      "control": "data_flows.collection.minimisation",
+      "status": "FAIL",
+      "detail": "Data minimisation NOT applied \u2014 REQUIRED.",
+      "severity": "medium"
+    },
+    {
+      "control": "data_flows.storage.encrypted",
+      "status": "PASS",
+      "detail": "Storage encryption confirmed.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.access.logging",
+      "status": "PASS",
+      "detail": "Access logging in place.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.sharing.dpa",
+      "status": "FAIL",
+      "detail": "DPA REQUIRED but not in place.",
+      "severity": "high"
+    },
+    {
+      "control": "data_flows.deletion.audit_trail",
+      "status": "FAIL",
+      "detail": "Deletion audit trail REQUIRED but not maintained.",
+      "severity": "medium"
+    },
+    {
+      "control": "non_negotiable.at_rest_encryption",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'at_rest_encryption' is satisfied."
+    },
+    {
+      "control": "non_negotiable.in_transit_encryption",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'in_transit_encryption' is satisfied."
+    },
+    {
+      "control": "non_negotiable.rbac",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'rbac' is satisfied."
+    },
+    {
+      "control": "non_negotiable.access_audit_logging",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'access_audit_logging' is satisfied."
+    },
+    {
+      "control": "non_negotiable.breach_response_plan",
+      "status": "FAIL",
+      "detail": "NON-NEGOTIABLE control 'breach_response_plan' is NOT satisfied (found: False).",
+      "severity": "critical"
+    },
+    {
+      "control": "non_negotiable.dsar_procedure",
+      "status": "FAIL",
+      "detail": "NON-NEGOTIABLE control 'dsar_procedure' is NOT satisfied (found: False).",
+      "severity": "critical"
+    }
+  ],
+  "critical_failures": [
+    {
+      "control": "authentication.mfa",
+      "status": "FAIL",
+      "detail": "MFA is REQUIRED but NOT enabled.",
+      "severity": "critical"
+    },
+    {
+      "control": "non_negotiable.breach_response_plan",
+      "status": "FAIL",
+      "detail": "NON-NEGOTIABLE control 'breach_response_plan' is NOT satisfied (found: False).",
+      "severity": "critical"
+    },
+    {
+      "control": "non_negotiable.dsar_procedure",
+      "status": "FAIL",
+      "detail": "NON-NEGOTIABLE control 'dsar_procedure' is NOT satisfied (found: False).",
+      "severity": "critical"
+    }
+  ]
+}

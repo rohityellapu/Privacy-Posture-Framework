@@ -1,0 +1,109 @@
+{
+  "use_case_id": "UC001",
+  "use_case_name": "GP Surgery",
+  "schema_version": "1.0",
+  "description": "A General Practitioner (GP) surgery collecting, storing, and sharing patient health data for clinical care, referrals, and NHS reporting.",
+  "organisation": {
+    "name": "Greenfield GP Surgery",
+    "type": "primary_healthcare",
+    "regulatory_context": ["GDPR", "NHS_DSPT", "UK_Data_Protection_Act_2018", "Caldicott_Principles"],
+    "data_controller": true,
+    "dpo_appointed": true
+  },
+  "environment": {
+    "encryption": {
+      "at_rest": {"enabled": true, "algorithm": "AES-256-GCM"},
+      "in_transit": {"enabled": true, "protocol": "TLS 1.3"},
+      "key_management": {"rotation_days": 90}
+    },
+    "authentication": {
+      "mfa_required": true,
+      "mfa_method": "totp",
+      "password_policy": {"min_length": 14, "complexity": "high", "max_age_days": 60},
+      "session_timeout_minutes": 15
+    },
+    "access_control": {
+      "model": "RBAC",
+      "roles": ["gp", "nurse", "receptionist", "admin", "auditor"],
+      "least_privilege": true,
+      "audit_logging": true
+    },
+    "anonymisation": {"pseudonymisation": true, "technique": "tokenisation"},
+    "policies": {
+      "privacy_policy_published": true,
+      "data_retention_policy": true,
+      "data_breach_response_plan": true,
+      "staff_training_required": true,
+      "data_subject_rights_procedure": true
+    },
+    "consent_management": {
+      "explicit_consent_required": true,
+      "consent_withdrawal_mechanism": true,
+      "consent_audit_trail": true
+    }
+  },
+  "system": {
+    "infrastructure": {
+      "deployment": "hybrid",
+      "network_zones": ["internal", "restricted"],
+      "security_controls": {"firewall": true, "ids_ips": true, "dlp": true, "vpn": true}
+    },
+    "assets": {
+      "data_stores": [
+        {"id": "DS001", "name": "Patient Record System (EMIS)", "type": "relational_db", "zone": "restricted", "encrypted": true},
+        {"id": "DS002", "name": "Appointment Booking System", "type": "application_db", "zone": "internal", "encrypted": true},
+        {"id": "DS003", "name": "Prescription Management", "type": "application_db", "zone": "restricted", "encrypted": true},
+        {"id": "DS004", "name": "Lab Results Repository", "type": "document_store", "zone": "restricted", "encrypted": true}
+      ],
+      "applications": ["EMIS Web", "NHS Spine", "eReferral System", "Appointment Booking Portal"],
+      "services": ["GP2GP", "NHS Summary Care Record", "Pathology Messaging"]
+    },
+    "interconnections": {
+      "internal": ["reception_terminal", "consulting_room_workstations", "nurse_station"],
+      "external": ["NHS_Spine", "Hospital_Trust_Systems", "NHSX_Analytics"],
+      "third_party_processors": ["EMIS_Health", "NHS_Pathology_Lab"]
+    }
+  },
+  "data_flows": {
+    "collection": {
+      "methods": ["reception_registration", "online_form", "gp_consultation", "lab_results_import"],
+      "consent_captured": true,
+      "data_minimisation": true
+    },
+    "storage": {
+      "systems": ["EMIS Web", "local_encrypted_backup"],
+      "geographic_restriction": "UK_only",
+      "backup_frequency": "daily"
+    },
+    "access": {
+      "roles_with_access": ["gp", "nurse", "receptionist"],
+      "access_logging": true,
+      "break_glass_procedure": true
+    },
+    "sharing": {
+      "recipients": ["hospital_trust", "nhs_spine", "pathology_lab", "111_service"],
+      "legal_basis": "Article 9(2)(h) - medical treatment",
+      "dpa_in_place": true
+    },
+    "retention": {
+      "adult_records_years": 10,
+      "child_records_years": "until_age_25_or_10_years_after_death",
+      "automated_review": false
+    },
+    "deletion": {
+      "method": "secure_overwrite",
+      "confirmation_required": true,
+      "audit_trail": true
+    }
+  },
+  "personal_data": {
+    "categories_in_use": [
+      "full_name", "date_of_birth", "national_id_number", "email_address", "phone_number",
+      "postal_address", "patient_id", "medical_record_number", "diagnosis", "prescriptions",
+      "allergies", "treatment_history", "lab_results", "vaccination_records",
+      "health_data", "gender", "next_of_kin_details", "gp_registration_details"
+    ],
+    "special_category": true,
+    "lawful_basis": "Article 9(2)(h) GDPR - health treatment"
+  }
+}

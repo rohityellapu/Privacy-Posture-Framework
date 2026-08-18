@@ -1,0 +1,192 @@
+{
+  "report_id": "CHK-UC001-20260810181135",
+  "use_case_id": "UC001",
+  "use_case_name": "GP Surgery",
+  "manifest_id": "MAN-UC001",
+  "checked_at": "2026-08-10T18:11:35.074862",
+  "summary": {
+    "total_checks": 33,
+    "pass": 33,
+    "fail": 0,
+    "warning": 0,
+    "info": 0,
+    "posture_score_percent": 100.0,
+    "posture_rating": "STRONG",
+    "critical_failures": 0
+  },
+  "findings": [
+    {
+      "control": "encryption.at_rest",
+      "status": "PASS",
+      "detail": "Encryption at rest is enabled."
+    },
+    {
+      "control": "encryption.in_transit_protocol",
+      "status": "PASS",
+      "detail": "Protocol TLS 1.3 meets minimum TLS 1.2."
+    },
+    {
+      "control": "encryption.key_rotation",
+      "status": "PASS",
+      "detail": "Key rotation every 90 days meets maximum 90 days."
+    },
+    {
+      "control": "authentication.mfa",
+      "status": "PASS",
+      "detail": "Multi-factor authentication is enabled."
+    },
+    {
+      "control": "authentication.password_length",
+      "status": "PASS",
+      "detail": "Password min length 14 meets required 12."
+    },
+    {
+      "control": "authentication.session_timeout",
+      "status": "PASS",
+      "detail": "Session timeout 15 min meets maximum 30 min."
+    },
+    {
+      "control": "access_control.model",
+      "status": "PASS",
+      "detail": "Access control model is RBAC."
+    },
+    {
+      "control": "access_control.least_privilege",
+      "status": "PASS",
+      "detail": "Least privilege is enforced."
+    },
+    {
+      "control": "access_control.audit_logging",
+      "status": "PASS",
+      "detail": "Audit logging is enabled."
+    },
+    {
+      "control": "pseudonymisation.enabled",
+      "status": "PASS",
+      "detail": "Pseudonymisation is implemented."
+    },
+    {
+      "control": "policies.privacy_policy_published",
+      "status": "PASS",
+      "detail": "Policy 'privacy_policy_published' is in place."
+    },
+    {
+      "control": "policies.data_retention_policy",
+      "status": "PASS",
+      "detail": "Policy 'data_retention_policy' is in place."
+    },
+    {
+      "control": "policies.breach_response_plan",
+      "status": "PASS",
+      "detail": "Policy 'breach_response_plan' is in place."
+    },
+    {
+      "control": "policies.staff_training",
+      "status": "PASS",
+      "detail": "Policy 'staff_training' is in place."
+    },
+    {
+      "control": "policies.dsar_procedure",
+      "status": "PASS",
+      "detail": "Policy 'dsar_procedure' is in place."
+    },
+    {
+      "control": "consent.explicit_consent_required",
+      "status": "PASS",
+      "detail": "Consent control 'explicit_consent_required' is satisfied."
+    },
+    {
+      "control": "consent.withdrawal_mechanism_required",
+      "status": "PASS",
+      "detail": "Consent control 'withdrawal_mechanism_required' is satisfied."
+    },
+    {
+      "control": "consent.consent_audit_trail_required",
+      "status": "PASS",
+      "detail": "Consent control 'consent_audit_trail_required' is satisfied."
+    },
+    {
+      "control": "data_flows.collection.consent",
+      "status": "PASS",
+      "detail": "Consent captured at collection.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.collection.minimisation",
+      "status": "PASS",
+      "detail": "Data minimisation applied at collection.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.storage.encrypted",
+      "status": "PASS",
+      "detail": "Storage encryption confirmed.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.access.logging",
+      "status": "PASS",
+      "detail": "Access logging in place.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.sharing.dpa",
+      "status": "PASS",
+      "detail": "Data Processing Agreement in place.",
+      "severity": null
+    },
+    {
+      "control": "data_flows.deletion.audit_trail",
+      "status": "PASS",
+      "detail": "Deletion audit trail maintained.",
+      "severity": null
+    },
+    {
+      "control": "governance.dpo",
+      "status": "PASS",
+      "detail": "DPO appointed.",
+      "severity": null
+    },
+    {
+      "control": "non_negotiable.at_rest_encryption",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'at_rest_encryption' is satisfied."
+    },
+    {
+      "control": "non_negotiable.in_transit_encryption",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'in_transit_encryption' is satisfied."
+    },
+    {
+      "control": "non_negotiable.mfa",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'mfa' is satisfied."
+    },
+    {
+      "control": "non_negotiable.rbac_with_least_privilege",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'rbac_with_least_privilege' is satisfied."
+    },
+    {
+      "control": "non_negotiable.pseudonymisation",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'pseudonymisation' is satisfied."
+    },
+    {
+      "control": "non_negotiable.access_audit_logging",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'access_audit_logging' is satisfied."
+    },
+    {
+      "control": "non_negotiable.breach_response_plan",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'breach_response_plan' is satisfied."
+    },
+    {
+      "control": "non_negotiable.consent_mechanism",
+      "status": "PASS",
+      "detail": "Non-negotiable control 'consent_mechanism' is satisfied."
+    }
+  ],
+  "critical_failures": []
+}

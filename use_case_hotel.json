@@ -1,0 +1,111 @@
+{
+  "use_case_id": "UC003",
+  "use_case_name": "Hotel",
+  "schema_version": "1.0",
+  "description": "A hotel chain collecting and processing guest personal data for reservations, check-in/check-out, loyalty programmes, billing, and regulatory compliance.",
+  "organisation": {
+    "name": "Harborview Hotel Group",
+    "type": "hospitality_accommodation",
+    "regulatory_context": ["GDPR", "UK_Data_Protection_Act_2018", "PCI_DSS", "Anti-Money_Laundering_Regulations"],
+    "data_controller": true,
+    "dpo_appointed": false
+  },
+  "environment": {
+    "encryption": {
+      "at_rest": {"enabled": true, "algorithm": "AES-256-GCM"},
+      "in_transit": {"enabled": true, "protocol": "TLS 1.2"},
+      "key_management": {"rotation_days": 90}
+    },
+    "authentication": {
+      "mfa_required": false,
+      "mfa_method": "none",
+      "password_policy": {"min_length": 10, "complexity": "medium", "max_age_days": 90},
+      "session_timeout_minutes": 60
+    },
+    "access_control": {
+      "model": "RBAC",
+      "roles": ["front_desk", "manager", "housekeeping", "it_admin", "finance"],
+      "least_privilege": false,
+      "audit_logging": true
+    },
+    "anonymisation": {"pseudonymisation": false, "technique": "none"},
+    "policies": {
+      "privacy_policy_published": true,
+      "data_retention_policy": false,
+      "data_breach_response_plan": false,
+      "staff_training_required": false,
+      "data_subject_rights_procedure": false
+    },
+    "consent_management": {
+      "explicit_consent_required": false,
+      "consent_withdrawal_mechanism": false,
+      "consent_audit_trail": false
+    }
+  },
+  "system": {
+    "infrastructure": {
+      "deployment": "on-premise",
+      "network_zones": ["public", "internal"],
+      "security_controls": {"firewall": true, "ids_ips": false, "dlp": false, "vpn": false, "wifi_guest_isolation": true}
+    },
+    "assets": {
+      "data_stores": [
+        {"id": "DS001", "name": "Property Management System (Opera)", "type": "relational_db", "zone": "internal", "encrypted": true},
+        {"id": "DS002", "name": "Booking and Reservation Engine", "type": "cloud_service", "zone": "public", "encrypted": true},
+        {"id": "DS003", "name": "Loyalty Programme Database", "type": "relational_db", "zone": "internal", "encrypted": false},
+        {"id": "DS004", "name": "Payment Processing System", "type": "pci_compliant_service", "zone": "restricted", "encrypted": true},
+        {"id": "DS005", "name": "CCTV Footage Storage", "type": "file_store", "zone": "internal", "encrypted": false}
+      ],
+      "applications": ["Opera PMS", "Booking.com API", "Restaurant POS", "Spa Booking App"],
+      "services": ["OTA Channel Manager", "Email Marketing Platform", "Revenue Management System"]
+    },
+    "interconnections": {
+      "internal": ["front_desk_terminals", "housekeeping_tablets", "restaurant_pos"],
+      "external": ["booking_com", "expedia", "payment_gateway", "tax_authority"],
+      "third_party_processors": ["Opera_Oracle", "payment_processor", "email_marketing_vendor"]
+    }
+  },
+  "data_flows": {
+    "collection": {
+      "methods": ["online_booking_form", "check_in_registration", "loyalty_enrolment", "restaurant_order"],
+      "consent_captured": false,
+      "data_minimisation": false
+    },
+    "storage": {
+      "systems": ["Opera PMS", "loyalty_db", "payment_system"],
+      "geographic_restriction": "EU_UK",
+      "backup_frequency": "weekly"
+    },
+    "access": {
+      "roles_with_access": ["front_desk", "manager", "finance"],
+      "access_logging": true,
+      "no_least_privilege": true
+    },
+    "sharing": {
+      "recipients": ["booking_platforms", "payment_processor", "marketing_agencies", "government_tax_authority"],
+      "legal_basis": "Article 6(1)(b) - contract performance",
+      "dpa_in_place": false
+    },
+    "retention": {
+      "guest_records_years": 3,
+      "financial_records_years": 7,
+      "cctv_footage_days": 30,
+      "automated_review": false
+    },
+    "deletion": {
+      "method": "simple_delete",
+      "confirmation_required": false,
+      "audit_trail": false
+    }
+  },
+  "personal_data": {
+    "categories_in_use": [
+      "full_name", "date_of_birth", "email_address", "phone_number", "postal_address",
+      "passport_number", "credit_card_number", "booking_reference", "room_number",
+      "check_in_date", "check_out_date", "loyalty_programme_id", "meal_preferences",
+      "special_requests", "ip_address", "cctv_biometric_image", "nationality"
+    ],
+    "special_category": true,
+    "lawful_basis": "Article 6(1)(b) GDPR - contract performance"
+  }
+}

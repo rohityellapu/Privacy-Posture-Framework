@@ -1,0 +1,111 @@
+{
+  "use_case_id": "UC002",
+  "use_case_name": "School",
+  "schema_version": "1.0",
+  "description": "A secondary school managing pupil records, attendance, grades, safeguarding, and parental communications in compliance with education and data protection law.",
+  "organisation": {
+    "name": "Riverside Academy",
+    "type": "secondary_education",
+    "regulatory_context": ["GDPR", "UK_Data_Protection_Act_2018", "KCSIE", "Equalities_Act_2010"],
+    "data_controller": true,
+    "dpo_appointed": true
+  },
+  "environment": {
+    "encryption": {
+      "at_rest": {"enabled": true, "algorithm": "AES-256-GCM"},
+      "in_transit": {"enabled": true, "protocol": "TLS 1.2"},
+      "key_management": {"rotation_days": 180}
+    },
+    "authentication": {
+      "mfa_required": true,
+      "mfa_method": "totp",
+      "password_policy": {"min_length": 12, "complexity": "high", "max_age_days": 90},
+      "session_timeout_minutes": 30
+    },
+    "access_control": {
+      "model": "RBAC",
+      "roles": ["headteacher", "teacher", "admin_staff", "safeguarding_officer", "it_support", "auditor"],
+      "least_privilege": true,
+      "audit_logging": true
+    },
+    "anonymisation": {"pseudonymisation": true, "technique": "tokenisation"},
+    "policies": {
+      "privacy_policy_published": true,
+      "data_retention_policy": true,
+      "data_breach_response_plan": true,
+      "staff_training_required": true,
+      "data_subject_rights_procedure": true
+    },
+    "consent_management": {
+      "explicit_consent_required": true,
+      "parental_consent_for_minors": true,
+      "consent_withdrawal_mechanism": true,
+      "consent_audit_trail": true
+    }
+  },
+  "system": {
+    "infrastructure": {
+      "deployment": "hybrid",
+      "network_zones": ["internal", "restricted"],
+      "security_controls": {"firewall": true, "ids_ips": false, "dlp": false, "vpn": true, "content_filter": true}
+    },
+    "assets": {
+      "data_stores": [
+        {"id": "DS001", "name": "Student Information System (SIMS)", "type": "relational_db", "zone": "restricted", "encrypted": true},
+        {"id": "DS002", "name": "Attendance Tracking System", "type": "application_db", "zone": "internal", "encrypted": true},
+        {"id": "DS003", "name": "Assessment and Grades Platform", "type": "application_db", "zone": "internal", "encrypted": true},
+        {"id": "DS004", "name": "Safeguarding Records", "type": "document_store", "zone": "restricted", "encrypted": true},
+        {"id": "DS005", "name": "Parent Communication Portal", "type": "web_application", "zone": "dmz", "encrypted": true}
+      ],
+      "applications": ["SIMS", "Microsoft Teams for Education", "Bromcom MIS", "SchoolComms"],
+      "services": ["National Pupil Database reporting", "Ofsted reporting", "Examinations Board portal"]
+    },
+    "interconnections": {
+      "internal": ["classroom_computers", "admin_office", "safeguarding_office"],
+      "external": ["DfE_National_Pupil_Database", "Ofsted", "Exam_Boards", "Local_Authority"],
+      "third_party_processors": ["Microsoft", "SIMS_Capita", "SchoolComms_provider"]
+    }
+  },
+  "data_flows": {
+    "collection": {
+      "methods": ["enrolment_form", "daily_registration", "teacher_assessment_entry", "parental_consent_form"],
+      "consent_captured": true,
+      "data_minimisation": true
+    },
+    "storage": {
+      "systems": ["SIMS MIS", "cloud_storage_encrypted"],
+      "geographic_restriction": "UK_only",
+      "backup_frequency": "daily"
+    },
+    "access": {
+      "roles_with_access": ["teacher", "headteacher", "admin_staff", "safeguarding_officer"],
+      "access_logging": true,
+      "safeguarding_restricted_access": true
+    },
+    "sharing": {
+      "recipients": ["DfE", "local_authority", "exam_boards", "parents_guardians", "child_protection_services"],
+      "legal_basis": "Article 6(1)(c) - legal obligation, Article 6(1)(e) - public task",
+      "dpa_in_place": true
+    },
+    "retention": {
+      "pupil_records_after_leaving_years": 7,
+      "safeguarding_records_years": 25,
+      "automated_review": false
+    },
+    "deletion": {
+      "method": "secure_overwrite",
+      "confirmation_required": true,
+      "audit_trail": true
+    }
+  },
+  "personal_data": {
+    "categories_in_use": [
+      "full_name", "date_of_birth", "student_id", "gender", "email_address", "postal_address",
+      "phone_number", "national_id_number", "grades", "attendance_records", "disciplinary_records",
+      "special_educational_needs", "examination_results", "safeguarding_notes",
+      "parent_guardian_contact_details", "free_school_meal_eligibility", "medical_conditions"
+    ],
+    "special_category": true,
+    "lawful_basis": "Article 6(1)(e) GDPR - public task / Article 9(2)(b) - employment/social protection"
+  }
+}
