@@ -1,9 +1,9 @@
 {
-  "report_id": "CHK-UC003-20260810181135",
+  "report_id": "CHK-UC003-20260818201647",
   "use_case_id": "UC003",
   "use_case_name": "Hotel",
   "manifest_id": "MAN-UC003",
-  "checked_at": "2026-08-10T18:11:35.164569",
+  "checked_at": "2026-08-18T20:16:47.857136",
   "summary": {
     "total_checks": 27,
     "pass": 14,
