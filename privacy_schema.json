@@ -1,6 +1,9 @@
 {
-  "schema_version": "1.0",
-  "schema_name": "Privacy Posture Framework Schema",
+  "version": "1.0",
+  "title": "Privacy Posture Schema",
+  "type": "object",
+  "properties": {},
+  "required":[],
   "description": "A comprehensive privacy schema for organisational privacy posture management, informed by GDPR, the DEAR framework, and privacy-by-design principles.",
   "environment": {
     "description": "Organisational environment controls applied to protect personal data.",

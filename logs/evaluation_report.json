@@ -1,8 +1,8 @@
 {
-  "evaluation_id": "EVAL-20260818201647",
-  "generated_at": "2026-08-18T20:16:47.870088",
-  "days_simulated": 3,
-  "seed": 42,
+  "evaluation_id": "EVAL-20260810181135",
+  "generated_at": "2026-08-10T18:11:35.204943",
+  "days_simulated": 5,
+  "seed": 99,
   "use_case_results": [
     {
       "use_case_id": "UC001",
@@ -16,47 +16,47 @@
         "critical_failures": 0
       },
       "simulation": {
-        "days": 3,
-        "total_events": 120,
+        "days": 5,
+        "total_events": 200,
         "state_distribution": {
-          "COMPLIANCE_CHECK": 7,
-          "DATA_ACCESS": 18,
-          "DATA_RETENTION_REVIEW": 2,
-          "DATA_COLLECTION": 18,
-          "INCIDENT_DETECTED": 8,
-          "DATA_DELETION": 1,
-          "DATA_STORAGE": 11,
-          "IDLE": 44,
-          "DATA_SHARING": 4,
-          "INCIDENT_RESOLVED": 7
+          "DATA_ACCESS": 25,
+          "COMPLIANCE_CHECK": 16,
+          "IDLE": 70,
+          "DATA_COLLECTION": 29,
+          "INCIDENT_RESOLVED": 8,
+          "DATA_SHARING": 8,
+          "DATA_STORAGE": 22,
+          "INCIDENT_DETECTED": 14,
+          "DATA_DELETION": 4,
+          "DATA_RETENTION_REVIEW": 4
         }
       },
       "monitor": {
-        "events_processed": 120,
-        "violations_detected": 25,
-        "compliance_rate": 79.2,
+        "events_processed": 200,
+        "violations_detected": 44,
+        "compliance_rate": 78.0,
         "posture": "CRITICAL",
         "severity_breakdown": {
-          "CRITICAL": 15,
-          "HIGH": 8,
-          "MEDIUM": 2,
+          "CRITICAL": 26,
+          "HIGH": 14,
+          "MEDIUM": 4,
           "LOW": 0
         },
         "top_violation_types": {
-          "privacy_incident": 8,
-          "audit_trail_violation": 4,
-          "legal_violation": 3,
-          "encryption_violation": 3,
-          "sensitive_data_legal_violation": 2
+          "privacy_incident": 14,
+          "legal_violation": 7,
+          "access_control_violation": 5,
+          "audit_trail_violation": 5,
+          "sensitive_data_legal_violation": 3
         }
       },
       "combined_evaluation": {
-        "combined_score_percent": 89.6,
+        "combined_score_percent": 89.0,
         "combined_rating": "MODERATE"
       },
-      "check_report_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\gp_check_report.json",
-      "log_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\gp_activity_log.json",
-      "monitor_report_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\gp_monitor_report.json"
+      "check_report_path": "/home/sandbox/privacy_framework/logs/gp_check_report.json",
+      "log_path": "/home/sandbox/privacy_framework/logs/gp_activity_log.json",
+      "monitor_report_path": "/home/sandbox/privacy_framework/logs/gp_monitor_report.json"
     },
     {
       "use_case_id": "UC002",
@@ -70,47 +70,47 @@
         "critical_failures": 0
       },
       "simulation": {
-        "days": 3,
-        "total_events": 150,
+        "days": 5,
+        "total_events": 250,
         "state_distribution": {
-          "COMPLIANCE_CHECK": 11,
-          "DATA_ACCESS": 24,
-          "DATA_RETENTION_REVIEW": 3,
-          "DATA_COLLECTION": 20,
-          "INCIDENT_DETECTED": 8,
-          "DATA_DELETION": 5,
-          "DATA_STORAGE": 14,
-          "IDLE": 54,
-          "DATA_SHARING": 5,
-          "INCIDENT_RESOLVED": 6
+          "DATA_ACCESS": 33,
+          "COMPLIANCE_CHECK": 16,
+          "IDLE": 80,
+          "DATA_COLLECTION": 37,
+          "INCIDENT_RESOLVED": 13,
+          "DATA_SHARING": 12,
+          "DATA_STORAGE": 31,
+          "INCIDENT_DETECTED": 18,
+          "DATA_DELETION": 6,
+          "DATA_RETENTION_REVIEW": 4
         }
       },
       "monitor": {
-        "events_processed": 150,
-        "violations_detected": 34,
-        "compliance_rate": 77.3,
+        "events_processed": 250,
+        "violations_detected": 58,
+        "compliance_rate": 76.8,
         "posture": "CRITICAL",
         "severity_breakdown": {
-          "CRITICAL": 17,
-          "HIGH": 14,
-          "MEDIUM": 3,
+          "CRITICAL": 36,
+          "HIGH": 18,
+          "MEDIUM": 4,
           "LOW": 0
         },
         "top_violation_types": {
-          "privacy_incident": 8,
-          "legal_violation": 6,
-          "consent_violation": 6,
+          "privacy_incident": 18,
+          "legal_violation": 9,
+          "consent_violation": 9,
           "audit_trail_violation": 6,
-          "sensitive_data_legal_violation": 3
+          "access_control_violation": 4
         }
       },
       "combined_evaluation": {
-        "combined_score_percent": 88.7,
+        "combined_score_percent": 88.4,
         "combined_rating": "MODERATE"
       },
-      "check_report_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\school_check_report.json",
-      "log_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\school_activity_log.json",
-      "monitor_report_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\school_monitor_report.json"
+      "check_report_path": "/home/sandbox/privacy_framework/logs/school_check_report.json",
+      "log_path": "/home/sandbox/privacy_framework/logs/school_activity_log.json",
+      "monitor_report_path": "/home/sandbox/privacy_framework/logs/school_monitor_report.json"
     },
     {
       "use_case_id": "UC003",
@@ -124,58 +124,58 @@
         "critical_failures": 3
       },
       "simulation": {
-        "days": 3,
-        "total_events": 180,
+        "days": 5,
+        "total_events": 300,
         "state_distribution": {
-          "COMPLIANCE_CHECK": 15,
-          "DATA_ACCESS": 25,
-          "DATA_RETENTION_REVIEW": 5,
-          "DATA_COLLECTION": 24,
-          "INCIDENT_DETECTED": 12,
-          "DATA_DELETION": 3,
-          "DATA_STORAGE": 19,
-          "IDLE": 61,
-          "DATA_SHARING": 6,
-          "INCIDENT_RESOLVED": 10
+          "DATA_ACCESS": 40,
+          "COMPLIANCE_CHECK": 25,
+          "IDLE": 110,
+          "DATA_COLLECTION": 45,
+          "INCIDENT_RESOLVED": 9,
+          "DATA_SHARING": 11,
+          "DATA_STORAGE": 39,
+          "INCIDENT_DETECTED": 14,
+          "DATA_DELETION": 4,
+          "DATA_RETENTION_REVIEW": 3
         }
       },
       "monitor": {
-        "events_processed": 180,
-        "violations_detected": 36,
-        "compliance_rate": 80.0,
+        "events_processed": 300,
+        "violations_detected": 44,
+        "compliance_rate": 85.3,
         "posture": "CRITICAL",
         "severity_breakdown": {
-          "CRITICAL": 19,
-          "HIGH": 8,
-          "MEDIUM": 9,
+          "CRITICAL": 23,
+          "HIGH": 16,
+          "MEDIUM": 5,
           "LOW": 0
         },
         "top_violation_types": {
-          "privacy_incident": 12,
-          "legal_violation": 7,
-          "compliance_violation": 6,
-          "consent_violation": 3,
-          "retention_violation": 3
+          "privacy_incident": 14,
+          "consent_violation": 10,
+          "access_control_violation": 6,
+          "compliance_violation": 5,
+          "audit_trail_violation": 5
         }
       },
       "combined_evaluation": {
-        "combined_score_percent": 66.9,
+        "combined_score_percent": 69.5,
         "combined_rating": "WEAK"
       },
-      "check_report_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\hotel_check_report.json",
-      "log_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\hotel_activity_log.json",
-      "monitor_report_path": "C:\\Users\\Rohit\\Documents\\VS\\Privacy-Posture-Framework\\logs\\hotel_monitor_report.json"
+      "check_report_path": "/home/sandbox/privacy_framework/logs/hotel_check_report.json",
+      "log_path": "/home/sandbox/privacy_framework/logs/hotel_activity_log.json",
+      "monitor_report_path": "/home/sandbox/privacy_framework/logs/hotel_monitor_report.json"
     }
   ],
   "cross_case_comparison": {
     "best_posture": {
       "use_case": "GP Surgery",
-      "score": 89.6
+      "score": 89.0
     },
     "worst_posture": {
       "use_case": "Hotel",
-      "score": 66.9
+      "score": 69.5
     },
-    "average_combined_score": 81.7
+    "average_combined_score": 82.3
   }
 }

@@ -103,7 +103,7 @@
       "full_name", "date_of_birth", "email_address", "phone_number", "postal_address",
       "passport_number", "credit_card_number", "booking_reference", "room_number",
       "check_in_date", "check_out_date", "loyalty_programme_id", "meal_preferences",
-      "special_requests", "ip_address", "cctv_biometric_image", "nationality"
+      "special_requests", "ip_address", "cctv_image", "nationality"
     ],
     "special_category": true,
     "lawful_basis": "Article 6(1)(b) GDPR - contract performance"

@@ -1,9 +1,9 @@
 {
-  "report_id": "CHK-UC002-20260818201647",
+  "report_id": "CHK-UC002-20260810181135",
   "use_case_id": "UC002",
   "use_case_name": "School",
   "manifest_id": "MAN-UC002",
-  "checked_at": "2026-08-18T20:16:47.800375",
+  "checked_at": "2026-08-10T18:11:35.121307",
   "summary": {
     "total_checks": 35,
     "pass": 35,

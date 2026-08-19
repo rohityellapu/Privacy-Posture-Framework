@@ -82,7 +82,10 @@
     },
     "sharing": {
       "recipients": ["hospital_trust", "nhs_spine", "pathology_lab", "111_service"],
-      "legal_basis": "Article 9(2)(h) - medical treatment",
+      "legal_basis": {
+                "article_6_basis": "...",
+                "article_9_condition": "Article 9(2)(h)"
+            },
       "dpa_in_place": true
     },
     "retention": {
@@ -104,6 +107,9 @@
       "health_data", "gender", "next_of_kin_details", "gp_registration_details"
     ],
     "special_category": true,
-    "lawful_basis": "Article 9(2)(h) GDPR - health treatment"
+    "lawful_basis": {
+                "article_6_basis": "...",
+                "article_9_condition": "Article 9(2)(h)"
+            }
   }
 }

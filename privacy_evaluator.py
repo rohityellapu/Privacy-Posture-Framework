@@ -4,7 +4,7 @@ Privacy Posture Evaluator
 ==========================
 Master evaluation runner that:
   1. Runs the static privacy checker for each use case vs its manifest.
-  2. Runs the FSM simulation for each use case (3 days each).
+  2. Runs the FSM simulation for each use case (5 days each).
   3. Runs the monitor on each simulation log.
   4. Generates a consolidated evaluation report.
 
@@ -54,7 +54,7 @@ def load_json(path: str) -> dict:
         return json.load(f)
 
 
-def run_all_evaluations(days: int = 3, seed: int = 42) -> dict:
+def run_all_evaluations(days: int = 5, seed: int = 99) -> dict:
     results = []
 
     for uc_cfg in USE_CASES:
@@ -176,8 +176,8 @@ def run_all_evaluations(days: int = 3, seed: int = 42) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(description="Privacy Posture Evaluator")
-    parser.add_argument("--days",   type=int, default=3)
-    parser.add_argument("--seed",   type=int, default=42)
+    parser.add_argument("--days",   type=int, default=5)
+    parser.add_argument("--seed",   type=int, default=99)
     parser.add_argument("--output", default=os.path.join(LOGS_DIR, "evaluation_report.json"))
     args = parser.parse_args()
 

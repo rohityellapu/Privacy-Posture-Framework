@@ -55,7 +55,10 @@
     ],
     "special_category_data": {
       "health_data_permitted": true,
-      "lawful_basis_required": "Article 9(2)(h) GDPR"
+      "lawful_basis_required":{
+                "article_6_basis": "...",
+                "article_9_condition": "Article 9(2)(h)"
+            }
     },
     "compliance_standards": ["GDPR", "NHS_DSPT", "UK_DPA_2018", "Caldicott_Principles"],
     "dpo_required": true,

@@ -89,8 +89,14 @@ USE_CASE_CONFIGS = {
         "sensitive_data_types": ["diagnosis", "prescriptions", "lab_results", "allergies"],
         "sharing_recipients": ["hospital_trust", "nhs_spine", "pathology_lab"],
         "lawful_bases": {
-            "sharing": "Article 9(2)(h) GDPR - medical treatment",
-            "collection": "Article 9(2)(h) GDPR - medical treatment",
+            "sharing": {
+                "article_6_basis": "..."
+                "article_9_condition": "Article 9(2)(h)"
+            },
+            "collection": {
+                "article_6_basis": "..."
+                "article_9_condition": "Article 9(2)(h)"
+            },
         },
         "expected_events_per_day": 40,
         "incident_labels": [
@@ -99,6 +105,7 @@ USE_CASE_CONFIGS = {
             "patient_list_exported_to_usb",
             "gp_accessing_records_outside_caseload",
         ],
+         "transition_graph": {...}
     },
     "SCHOOL": {
         "use_case_id": "UC002",
@@ -130,6 +137,7 @@ USE_CASE_CONFIGS = {
             "grades_shared_with_marketing_agency",
             "parental_consent_not_obtained_before_photo_sharing",
         ],
+         "transition_graph": {...}
     },
     "HOTEL": {
         "use_case_id": "UC003",
@@ -159,6 +167,7 @@ USE_CASE_CONFIGS = {
             "cctv_footage_retained_beyond_30_days",
             "loyalty_db_accessible_by_housekeeping_staff",
         ],
+         "transition_graph": {...}
     },
 }
 
