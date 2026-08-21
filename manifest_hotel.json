@@ -56,9 +56,12 @@
       "nationality", "ip_address"
     ],
     "special_category_data": {
-      "biometric_cctv_permitted": true,
+      "biometric_cctv_permitted": false,
       "meal_preferences_as_religious_indicator": "minimise",
-      "lawful_basis_required": "Article 6(1)(b) GDPR - contract performance"
+      "lawful_basis_required": {
+        "article_6_basis": "...",
+        "article_9_condition": "..."
+      }
     },
     "compliance_standards": ["GDPR", "UK_DPA_2018", "PCI_DSS"],
     "dpo_required": false,

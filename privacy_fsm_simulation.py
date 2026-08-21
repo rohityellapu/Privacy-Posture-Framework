@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """
 Privacy FSM Simulation Framework
 ==================================
@@ -8,9 +8,12 @@ daily privacy-relevant activities for three use cases:
   UC002 - School
   UC003 - Hotel
 
-Each use case shares the SAME FSM topology (states & transitions) but
-is instantiated with use-case-specific actors, data categories, and event
-probabilities.  The simulation generates a structured activity log that
+he FSM separates transition probabilities, 
+which determine movement between lifecycle states, 
+from event-generation probabilities, 
+which control the occurrence of privacy-relevant conditions and 
+violation flags. 
+The simulation generates a structured activity log that
 the monitor can then analyse.
 
 Usage:
@@ -89,13 +92,14 @@ USE_CASE_CONFIGS = {
         "sensitive_data_types": ["diagnosis", "prescriptions", "lab_results", "allergies"],
         "sharing_recipients": ["hospital_trust", "nhs_spine", "pathology_lab"],
         "lawful_bases": {
+            # this is a scenario assumption, not a universal rule.
             "sharing": {
-                "article_6_basis": "..."
-                "article_9_condition": "Article 9(2)(h)"
+                "article_6_basis": "Article 6(1)(e) - public task",
+                "article_9_condition": "Article 9(2)(h) - health or social care"
             },
             "collection": {
-                "article_6_basis": "..."
-                "article_9_condition": "Article 9(2)(h)"
+                "article_6_basis": "Article 6(1)(e) - public task",
+                "article_9_condition": "Article 9(2)(h) - health or social care"
             },
         },
         "expected_events_per_day": 40,
@@ -171,7 +175,7 @@ USE_CASE_CONFIGS = {
     },
 }
 
-
+SIMULATION_START = datetime(2026, 1, 6, 8, 0, 0)
 # ─────────────────────────────────────────────────────────────
 #  Event generators per state
 # ─────────────────────────────────────────────────────────────
@@ -307,7 +311,6 @@ def run_fsm(cfg: dict, days: int, seed: int) -> List[dict]:
     rng = random.Random(seed)
     events: List[dict] = []
     current_state = "IDLE"
-    ts = datetime(2026, 1, 6, 8, 0, 0)  # Monday morning start
 
     events_per_day = cfg["expected_events_per_day"]
     total_events   = days * events_per_day
@@ -323,7 +326,8 @@ def run_fsm(cfg: dict, days: int, seed: int) -> List[dict]:
         events.append(event)
 
         # Transition
-        transitions = FSM_GRAPH.get(current_state, [("IDLE", 1.0)])
+        transition_graph = cfg.get("transition_graph", FSM_GRAPH)
+        transitions = transition_graph.get(current_state, [("IDLE", 1.0)])
         r = rng.random()
         cumulative = 0.0
         next_state = transitions[-1][0]

@@ -39,8 +39,10 @@
       "acceptable_use_policy": true
     },
     "consent": {
-      "explicit_consent_required": true,
-      "parental_consent_for_minors": true,
+      "collection": {
+        "consent_at_collection": true,
+        "parental_consent": true
+      },
       "withdrawal_mechanism_required": true,
       "consent_audit_trail_required": true
     },
