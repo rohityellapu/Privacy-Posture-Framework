@@ -1,10 +1,14 @@
 {
-  "report_id": "MON-GP SURGERY-20260810181135",
+  "report_id": "MON-GP SURGERY-20260828232909",
   "use_case": "GP Surgery",
-  "generated_at": "2026-08-10T18:11:35.109072",
+  "generated_at": "2026-08-28T23:29:09.428175",
   "total_events_processed": 200,
-  "total_violations_detected": 44,
-  "compliance_rate_percent": 78.0,
+  "violation_signal_count": 44,
+  "violating_event_count": 38,
+  "event_violation_rate_percent": 19.0,
+  "event_compliance_rate_percent": 81.0,
+  "violation_signal_rate_percent": 22.0,
+  "compliance_rate_percent": 81.0,
   "overall_posture": "CRITICAL",
   "severity_breakdown": {
     "CRITICAL": 26,
@@ -54,12 +58,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-06T09:21:00",
+      "event_id": "2026-01-01T09:21:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "vaccination_records",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.108878"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -67,12 +73,14 @@
       "severity": "MEDIUM",
       "violation_type": "retention_violation",
       "recommended_action": "trigger_retention_review",
-      "event_id": "2026-01-06T11:38:00",
+      "event_id": "2026-01-01T11:38:00",
       "event_type": "DATA_RETENTION_REVIEW",
       "actor": "admin",
       "data_type": "allergies",
-      "action_taken": "RETENTION_REVIEW_TRIGGERED",
-      "actioned_at": "2026-08-10T18:11:35.108890"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "RETENTION_REVIEW_TRIGGERED",
+      "actioned_at": null
     },
     {
       "signal_type": "UNAUTHORISED_ROLE_ACCESSING_SENSITIVE_DATA",
@@ -80,12 +88,14 @@
       "severity": "HIGH",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_access_and_review_rbac",
-      "event_id": "2026-01-06T12:55:00",
+      "event_id": "2026-01-01T12:55:00",
       "event_type": "DATA_ACCESS",
       "actor": "receptionist",
       "data_type": "allergies",
-      "action_taken": "ACCESS_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.108895"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ACCESS_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -93,12 +103,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-06T13:14:00",
+      "event_id": "2026-01-01T13:14:00",
       "event_type": "DATA_SHARING",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.108900"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -106,12 +118,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-06T13:14:00",
+      "event_id": "2026-01-01T13:14:00",
       "event_type": "DATA_SHARING",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.108901"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
@@ -119,12 +133,14 @@
       "severity": "CRITICAL",
       "violation_type": "sensitive_data_legal_violation",
       "recommended_action": "halt_sharing_notify_dpo_obtain_dpa",
-      "event_id": "2026-01-06T13:14:00",
+      "event_id": "2026-01-01T13:14:00",
       "event_type": "DATA_SHARING",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.108902"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -132,12 +148,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-06T13:42:00",
+      "event_id": "2026-01-01T13:42:00",
       "event_type": "DATA_SHARING",
       "actor": "it_admin",
       "data_type": "prescriptions",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.108906"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
@@ -145,12 +163,14 @@
       "severity": "CRITICAL",
       "violation_type": "sensitive_data_legal_violation",
       "recommended_action": "halt_sharing_notify_dpo_obtain_dpa",
-      "event_id": "2026-01-06T13:42:00",
+      "event_id": "2026-01-01T13:42:00",
       "event_type": "DATA_SHARING",
       "actor": "it_admin",
       "data_type": "prescriptions",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.108908"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -158,12 +178,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-06T14:38:00",
+      "event_id": "2026-01-01T14:38:00",
       "event_type": "DATA_COLLECTION",
       "actor": "nurse",
       "data_type": "date_of_birth",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.108912"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -171,12 +193,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-06T15:11:00",
+      "event_id": "2026-01-01T15:11:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "it_admin",
       "data_type": "vaccination_records",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108918"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -184,12 +208,14 @@
       "severity": "CRITICAL",
       "violation_type": "encryption_violation",
       "recommended_action": "encrypt_data_immediately_and_alert_dpo",
-      "event_id": "2026-01-06T17:05:00",
+      "event_id": "2026-01-01T17:05:00",
       "event_type": "DATA_STORAGE",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "ALERT_RAISED",
-      "actioned_at": "2026-08-10T18:11:35.108923"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ALERT_RAISED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -197,12 +223,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-06T17:24:00",
+      "event_id": "2026-01-01T17:24:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "it_admin",
       "data_type": "full_name",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.108925"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -210,12 +238,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-06T17:40:00",
+      "event_id": "2026-01-01T17:40:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "receptionist",
       "data_type": "lab_results",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108927"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -223,12 +253,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T08:21:00",
+      "event_id": "2026-01-02T08:21:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108931"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -236,12 +268,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T08:29:00",
+      "event_id": "2026-01-02T08:29:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "admin",
       "data_type": "patient_id",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108933"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -249,12 +283,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T08:35:00",
+      "event_id": "2026-01-02T08:35:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "receptionist",
       "data_type": "date_of_birth",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108935"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -262,12 +298,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-07T10:36:00",
+      "event_id": "2026-01-02T10:36:00",
       "event_type": "DATA_ACCESS",
       "actor": "admin",
       "data_type": "patient_id",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.108939"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -275,12 +313,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-07T11:27:00",
+      "event_id": "2026-01-02T11:27:00",
       "event_type": "DATA_SHARING",
       "actor": "admin",
       "data_type": "allergies",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.108944"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -288,12 +328,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-07T11:27:00",
+      "event_id": "2026-01-02T11:27:00",
       "event_type": "DATA_SHARING",
       "actor": "admin",
       "data_type": "allergies",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.108945"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
@@ -301,12 +343,14 @@
       "severity": "CRITICAL",
       "violation_type": "sensitive_data_legal_violation",
       "recommended_action": "halt_sharing_notify_dpo_obtain_dpa",
-      "event_id": "2026-01-07T11:27:00",
+      "event_id": "2026-01-02T11:27:00",
       "event_type": "DATA_SHARING",
       "actor": "admin",
       "data_type": "allergies",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.108946"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -314,12 +358,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-07T12:37:00",
+      "event_id": "2026-01-02T12:37:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "admin",
       "data_type": "lab_results",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.108949"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -327,12 +373,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T13:37:00",
+      "event_id": "2026-01-02T13:37:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "receptionist",
       "data_type": "date_of_birth",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108953"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -340,12 +388,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T13:51:00",
+      "event_id": "2026-01-02T13:51:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "receptionist",
       "data_type": "date_of_birth",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108955"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -353,12 +403,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-07T15:18:00",
+      "event_id": "2026-01-02T15:18:00",
       "event_type": "DATA_ACCESS",
       "actor": "gp",
       "data_type": "patient_id",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.108959"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -366,12 +418,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T16:05:00",
+      "event_id": "2026-01-02T16:05:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108962"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -379,12 +433,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T16:19:00",
+      "event_id": "2026-01-02T16:19:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "gp",
       "data_type": "patient_id",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108965"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "UNAUTHORISED_ROLE_ACCESSING_SENSITIVE_DATA",
@@ -392,12 +448,14 @@
       "severity": "HIGH",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_access_and_review_rbac",
-      "event_id": "2026-01-07T17:59:00",
+      "event_id": "2026-01-02T17:59:00",
       "event_type": "DATA_ACCESS",
       "actor": "receptionist",
       "data_type": "allergies",
-      "action_taken": "ACCESS_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.108969"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ACCESS_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -405,12 +463,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-08T10:43:00",
+      "event_id": "2026-01-03T10:43:00",
       "event_type": "DATA_ACCESS",
       "actor": "gp",
       "data_type": "prescriptions",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.108975"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -418,12 +478,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-08T11:11:00",
+      "event_id": "2026-01-03T11:11:00",
       "event_type": "DATA_COLLECTION",
       "actor": "admin",
       "data_type": "date_of_birth",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.108978"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -431,12 +493,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-08T12:03:00",
+      "event_id": "2026-01-03T12:03:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "it_admin",
       "data_type": "lab_results",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.108981"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -444,12 +508,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-08T13:35:00",
+      "event_id": "2026-01-03T13:35:00",
       "event_type": "DATA_ACCESS",
       "actor": "admin",
       "data_type": "patient_id",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.108987"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -457,12 +523,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-08T13:35:00",
+      "event_id": "2026-01-03T13:35:00",
       "event_type": "DATA_ACCESS",
       "actor": "admin",
       "data_type": "patient_id",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.108989"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -470,12 +538,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T14:28:00",
+      "event_id": "2026-01-03T14:28:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "gp",
       "data_type": "diagnosis",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.108992"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -483,12 +553,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-08T15:44:00",
+      "event_id": "2026-01-03T15:44:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "full_name",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.108996"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -496,12 +568,14 @@
       "severity": "CRITICAL",
       "violation_type": "encryption_violation",
       "recommended_action": "encrypt_data_immediately_and_alert_dpo",
-      "event_id": "2026-01-08T16:43:00",
+      "event_id": "2026-01-03T16:43:00",
       "event_type": "DATA_STORAGE",
       "actor": "admin",
       "data_type": "lab_results",
-      "action_taken": "ALERT_RAISED",
-      "actioned_at": "2026-08-10T18:11:35.108999"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ALERT_RAISED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -509,12 +583,14 @@
       "severity": "HIGH",
       "violation_type": "deletion_violation",
       "recommended_action": "re_delete_securely_and_audit",
-      "event_id": "2026-01-09T08:00:00",
+      "event_id": "2026-01-04T08:00:00",
       "event_type": "DATA_DELETION",
       "actor": "admin",
       "data_type": "diagnosis",
-      "action_taken": "REDELETION_QUEUED",
-      "actioned_at": "2026-08-10T18:11:35.109004"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "REDELETION_QUEUED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -522,12 +598,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-09T08:21:00",
+      "event_id": "2026-01-04T08:21:00",
       "event_type": "DATA_COLLECTION",
       "actor": "nurse",
       "data_type": "patient_id",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.109007"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -535,12 +613,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-09T09:46:00",
+      "event_id": "2026-01-04T09:46:00",
       "event_type": "DATA_SHARING",
       "actor": "nurse",
       "data_type": "vaccination_records",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.109012"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -548,12 +628,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-09T10:36:00",
+      "event_id": "2026-01-04T10:36:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "prescriptions",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.109015"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -561,12 +643,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-09T13:25:00",
+      "event_id": "2026-01-04T13:25:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "it_admin",
       "data_type": "full_name",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.109021"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -574,12 +658,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-09T13:41:00",
+      "event_id": "2026-01-04T13:41:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "nurse",
       "data_type": "date_of_birth",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.109024"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -587,12 +673,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-09T14:45:00",
+      "event_id": "2026-01-04T14:45:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "nurse",
       "data_type": "diagnosis",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.109029"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -600,12 +688,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-09T14:54:00",
+      "event_id": "2026-01-04T14:54:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "nurse",
       "data_type": "allergies",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.109031"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -613,12 +703,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-09T16:22:00",
+      "event_id": "2026-01-04T16:22:00",
       "event_type": "DATA_SHARING",
       "actor": "nurse",
       "data_type": "full_name",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.109035"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     }
   ]
 }

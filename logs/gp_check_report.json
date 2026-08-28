@@ -1,12 +1,12 @@
 {
-  "report_id": "CHK-UC001-20260810181135",
+  "report_id": "CHK-UC001-20260828232909",
   "use_case_id": "UC001",
   "use_case_name": "GP Surgery",
   "manifest_id": "MAN-UC001",
-  "checked_at": "2026-08-10T18:11:35.074862",
+  "checked_at": "2026-08-28T23:29:09.416307",
   "summary": {
-    "total_checks": 33,
-    "pass": 33,
+    "total_checks": 34,
+    "pass": 34,
     "fail": 0,
     "warning": 0,
     "info": 0,
@@ -15,6 +15,11 @@
     "critical_failures": 0
   },
   "findings": [
+    {
+      "control": "schema.validation",
+      "status": "PASS",
+      "detail": "Use-case conforms to Privacy Posture Framework schema."
+    },
     {
       "control": "encryption.at_rest",
       "status": "PASS",
