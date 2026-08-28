@@ -9,14 +9,17 @@ for every control category.
 Usage:
     python privacy_checker.py <use_case_json> <manifest_json> [--output <report.json>]
 """
-
+from jsonschema import Draft202012Validator
 import json
 import sys
 import os
 import argparse
 from datetime import datetime
 from typing import Any, Dict, List, Tuple
-
+DEFAULT_SCHEMA_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "privacy_schema.json"
+)
 
 # ─────────────────────────────────────────────
 #  Severity constants
@@ -26,6 +29,67 @@ FAIL    = "FAIL"
 WARNING = "WARNING"
 INFO    = "INFO"
 
+def validate_against_schema(
+    use_case: dict,
+    schema_path: str = DEFAULT_SCHEMA_PATH
+) -> List[dict]:
+
+    findings = []
+
+    if not os.path.exists(schema_path):
+        findings.append({
+            "control": "schema.validation",
+            "status": FAIL,
+            "severity": "critical",
+            "detail": f"Schema file not found: {schema_path}"
+        })
+        return findings
+
+    try:
+        with open(schema_path, "r", encoding="utf-8") as f:
+            schema = json.load(f)
+
+        validator = Draft202012Validator(schema)
+
+        errors = sorted(
+            validator.iter_errors(use_case),
+            key=lambda error: list(error.path)
+        )
+
+        if not errors:
+            findings.append({
+                "control": "schema.validation",
+                "status": PASS,
+                "detail": "Use-case conforms to Privacy Posture Framework schema."
+            })
+        else:
+            for error in errors:
+                path = ".".join(str(p) for p in error.path)
+
+                findings.append({
+                    "control": f"schema.validation.{path or 'root'}",
+                    "status": FAIL,
+                    "severity": "critical",
+                    "detail": error.message
+                })
+
+    except json.JSONDecodeError as exc:
+        findings.append({
+            "control": "schema.validation",
+            "status": FAIL,
+            "severity": "critical",
+            "detail": f"Invalid JSON schema: {exc}"
+        })
+
+    except Exception as exc:
+        findings.append({
+            "control": "schema.validation",
+            "status": FAIL,
+            "severity": "critical",
+            "detail": f"Schema validation failed: {exc}"
+        })
+
+    return findings
 
 def _get(obj: dict, *keys, default=None):
     """Safe nested key access."""
@@ -370,13 +434,47 @@ def check_non_negotiables(uc: dict, man: dict) -> List[dict]:
                                   "severity": "critical"})
     return findings
 
+def calculate_posture_rating(
+    posture_score: float,
+    critical_failures: int
+) -> str:
 
+    if critical_failures > 0:
+        if posture_score < 50:
+            return "CRITICAL"
+        return "WEAK"
+
+    if posture_score >= 90:
+        return "STRONG"
+
+    if posture_score >= 70:
+        return "MODERATE"
+
+    if posture_score >= 50:
+        return "WEAK"
+
+    return "CRITICAL"
 # ─────────────────────────────────────────────
 #  Main checker
 # ─────────────────────────────────────────────
 
-def run_checks(use_case: dict, manifest: dict) -> dict:
+def run_checks(
+    use_case: dict,
+    manifest: dict,
+    schema_path: str = DEFAULT_SCHEMA_PATH
+) -> dict:
+
     all_findings = []
+
+    # Stage 0 — structural schema validation
+    all_findings.extend(
+        validate_against_schema(
+            use_case,
+            schema_path
+        )
+    )
+
+    # Stage 1 — privacy posture checks
     all_findings.extend(check_encryption(use_case, manifest))
     all_findings.extend(check_authentication(use_case, manifest))
     all_findings.extend(check_access_control(use_case, manifest))
@@ -394,15 +492,6 @@ def run_checks(use_case: dict, manifest: dict) -> dict:
     critical_fails = [f for f in all_findings if f.get("severity") == "critical" and f["status"] == FAIL]
     posture_score  = round(totals[PASS] / max(totals[PASS] + totals[FAIL] + totals[WARNING], 1) * 100, 1)
 
-    if posture_score >= 90 and not critical_fails:
-        posture_rating = "STRONG"
-    elif posture_score >= 70 and len(critical_fails) == 0:
-        posture_rating = "MODERATE"
-    elif posture_score >= 50:
-        posture_rating = "WEAK"
-    else:
-        posture_rating = "CRITICAL"
-
     return {
         "report_id": f"CHK-{use_case.get('use_case_id','?')}-{datetime.now().strftime('%Y%m%d%H%M%S')}",
         "use_case_id": use_case.get("use_case_id"),
@@ -416,7 +505,7 @@ def run_checks(use_case: dict, manifest: dict) -> dict:
             "warning": totals[WARNING],
             "info": totals[INFO],
             "posture_score_percent": posture_score,
-            "posture_rating": posture_rating,
+            "posture_rating": calculate_posture_rating(posture_score, len(critical_fails)),
             "critical_failures": len(critical_fails),
         },
         "findings": all_findings,

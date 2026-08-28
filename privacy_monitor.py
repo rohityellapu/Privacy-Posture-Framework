@@ -84,6 +84,11 @@ def detect(event: dict) -> List[dict]:
     if state == "DATA_SHARING" and data_type in SENSITIVE_DATA_TYPES:
         if not event.get("dpa_in_place"):
             detections.append({
+                "recipient": "email_marketing_vendor",
+                "recipient_role": "processor",
+                "dpa_required": true,
+                "dpa_in_place": false,
+                "legal_basis_documented": true,
                 "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
                 "flag": "SENSITIVE_SHARE_NO_DPA",
                 "severity": "CRITICAL",
@@ -203,17 +208,92 @@ ACTION_OUTCOMES = {
 }
 
 def act(evaluation: dict) -> dict:
-    """Determine the action outcome for an evaluation finding."""
-    action_taken = ACTION_OUTCOMES.get(
-        evaluation["recommended_action"], "LOGGED"
+    """
+    Simulate the remediation action associated with a finding.
+
+    This function does not modify external systems.
+    It records the action that a production enforcement layer
+    would be expected to perform.
+    """
+
+    recommended_action = evaluation.get(
+        "recommended_action",
+        "log_and_investigate"
     )
+
+    action_outcome = ACTION_OUTCOMES.get(
+        recommended_action,
+        "LOGGED"
+    )
+
     return {
         **evaluation,
-        "action_taken": action_taken,
-        "actioned_at": datetime.now().isoformat(),
+
+        "action_mode": "SIMULATED",
+
+        "action_executed": False,
+
+        "recommended_action": recommended_action,
+
+        "simulated_action": action_outcome,
+
+        "actioned_at": evaluation.get(
+            "event_timestamp"
+        )
     }
 
+def calculate_runtime_metrics(
+    all_actions: List[dict],
+    total_events: int
+) -> dict:
 
+    total_events = max(total_events, 1)
+
+    violation_signal_count = len(all_actions)
+
+    violating_event_ids = {
+        action.get("event_id")
+        for action in all_actions
+        if action.get("event_id") is not None
+    }
+
+    violating_event_count = len(
+        violating_event_ids
+    )
+
+    event_violation_rate = round(
+        violating_event_count /
+        total_events *
+        100,
+        1
+    )
+
+    event_compliance_rate = round(
+        100 -
+        event_violation_rate,
+        1
+    )
+
+    signal_rate = round(
+        violation_signal_count /
+        total_events *
+        100,
+        1
+    )
+
+    return {
+        "total_events": total_events,
+        "violation_signal_count":
+            violation_signal_count,
+        "violating_event_count":
+            violating_event_count,
+        "event_violation_rate_percent":
+            event_violation_rate,
+        "event_compliance_rate_percent":
+            event_compliance_rate,
+        "violation_signal_rate_percent":
+            signal_rate
+    }
 # ─────────────────────────────────────────────────────────────
 #  R — REPORT stage
 #  Aggregate results and produce compliance report
@@ -231,14 +311,13 @@ def report(use_case: str, all_actions: List[dict], total_events: int) -> dict:
         sev_counts[sev] = sev_counts.get(sev, 0) + 1
         vt = a.get("violation_type", "unknown")
         violation_types[vt] = violation_types.get(vt, 0) + 1
-        at = a.get("action_taken", "LOGGED")
+        at = a.get("simulated_action", "LOGGED")
         action_counts[at] = action_counts.get(at, 0) + 1
         et = a.get("event_type", "UNKNOWN")
         lifecycle_issues[et] = lifecycle_issues.get(et, 0) + 1
 
-    total_violations = len(all_actions)
-    compliance_rate = round((1 - total_violations / max(total_events, 1)) * 100, 1)
-
+    violation_signal_count  = len(all_actions)
+   
     if sev_counts["CRITICAL"] > 0:
         overall_posture = "CRITICAL"
     elif sev_counts["HIGH"] > 2:
@@ -247,13 +326,23 @@ def report(use_case: str, all_actions: List[dict], total_events: int) -> dict:
         overall_posture = "MODERATE"
     else:
         overall_posture = "STRONG"
-
+    metrics = calculate_runtime_metrics(
+        all_actions,
+        total_events
+    )
+    compliance_rate = metrics[
+        "event_compliance_rate_percent"
+    ]
     return {
         "report_id": f"MON-{use_case.upper()}-{datetime.now().strftime('%Y%m%d%H%M%S')}",
         "use_case": use_case,
         "generated_at": datetime.now().isoformat(),
         "total_events_processed": total_events,
-        "total_violations_detected": total_violations,
+        "violation_signal_count": metrics["violation_signal_count"],
+        "violating_event_count": metrics["violating_event_count"],
+        "event_violation_rate_percent": metrics["event_violation_rate_percent"],
+        "event_compliance_rate_percent": metrics["event_compliance_rate_percent"],
+        "violation_signal_rate_percent": metrics["violation_signal_rate_percent"],
         "compliance_rate_percent": compliance_rate,
         "overall_posture": overall_posture,
         "severity_breakdown": sev_counts,
@@ -299,7 +388,7 @@ def main():
     print(f"  Privacy Monitor Report — {rep['use_case']}")
     print(f"{'='*60}")
     print(f"  Events processed : {rep['total_events_processed']}")
-    print(f"  Violations found : {rep['total_violations_detected']}")
+    print(f"  Violations found : {rep['violation_signal_count _detected']}")
     print(f"  Compliance rate  : {rep['compliance_rate_percent']}%")
     print(f"  Posture          : {rep['overall_posture']}")
     print(f"  Severity         : {rep['severity_breakdown']}")

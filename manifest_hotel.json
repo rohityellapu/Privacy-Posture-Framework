@@ -56,12 +56,9 @@
       "nationality", "ip_address"
     ],
     "special_category_data": {
-      "biometric_cctv_permitted": false,
-      "meal_preferences_as_religious_indicator": "minimise",
-      "lawful_basis_required": {
-        "article_6_basis": "...",
-        "article_9_condition": "..."
-      }
+        "biometric_cctv_permitted": false,
+        "biometric_recognition_used": false,
+        "meal_preferences_as_religious_indicator": "minimise"
     },
     "compliance_standards": ["GDPR", "UK_DPA_2018", "PCI_DSS"],
     "dpo_required": false,

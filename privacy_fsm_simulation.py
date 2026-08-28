@@ -91,17 +91,24 @@ USE_CASE_CONFIGS = {
         ],
         "sensitive_data_types": ["diagnosis", "prescriptions", "lab_results", "allergies"],
         "sharing_recipients": ["hospital_trust", "nhs_spine", "pathology_lab"],
-        "lawful_bases": {
-            # this is a scenario assumption, not a universal rule.
+       "lawful_bases": {
             "sharing": {
-                "article_6_basis": "Article 6(1)(e) - public task",
-                "article_9_condition": "Article 9(2)(h) - health or social care"
+                "article_6_basis":
+                    "Article 6(1)(e) - public task",
+                "article_9_condition":
+                    "Article 9(2)(h) - health or social care",
+                "dpa_schedule_1_condition":
+                    "Applicable Schedule 1 condition"
             },
             "collection": {
-                "article_6_basis": "Article 6(1)(e) - public task",
-                "article_9_condition": "Article 9(2)(h) - health or social care"
-            },
-        },
+                "article_6_basis":
+                    "Article 6(1)(e) - public task",
+                "article_9_condition":
+                    "Article 9(2)(h) - health or social care",
+                "dpa_schedule_1_condition":
+                    "Applicable Schedule 1 condition"
+            }
+        }
         "expected_events_per_day": 40,
         "incident_labels": [
             "unauthorised_patient_record_access",
@@ -109,7 +116,10 @@ USE_CASE_CONFIGS = {
             "patient_list_exported_to_usb",
             "gp_accessing_records_outside_caseload",
         ],
-         "transition_graph": {...}
+         transition_graph = cfg.get(
+            "transition_graph",
+            FSM_GRAPH
+        )
     },
     "SCHOOL": {
         "use_case_id": "UC002",
@@ -141,7 +151,10 @@ USE_CASE_CONFIGS = {
             "grades_shared_with_marketing_agency",
             "parental_consent_not_obtained_before_photo_sharing",
         ],
-         "transition_graph": {...}
+        transition_graph = cfg.get(
+            "transition_graph",
+            FSM_GRAPH
+        )
     },
     "HOTEL": {
         "use_case_id": "UC003",
@@ -171,7 +184,10 @@ USE_CASE_CONFIGS = {
             "cctv_footage_retained_beyond_30_days",
             "loyalty_db_accessible_by_housekeeping_staff",
         ],
-         "transition_graph": {...}
+         transition_graph = cfg.get(
+            "transition_graph",
+            FSM_GRAPH
+        )
     },
 }
 
@@ -311,7 +327,14 @@ def run_fsm(cfg: dict, days: int, seed: int) -> List[dict]:
     rng = random.Random(seed)
     events: List[dict] = []
     current_state = "IDLE"
-
+    ts = datetime(
+        2026,
+        1,
+        1,
+        8,
+        0,
+        0
+    )
     events_per_day = cfg["expected_events_per_day"]
     total_events   = days * events_per_day
 
@@ -366,12 +389,12 @@ def main():
             flag_counts[flag] = flag_counts.get(flag, 0) + 1
 
     log = {
-        "simulation_id": f"SIM-{cfg['use_case_id']}-{datetime.now().strftime('%Y%m%d%H%M%S')}",
+        "simulation_id": f"SIM-{cfg['use_case_id']}-{SIMULATION_START.strftime('%Y%m%d%H%M%S')}",
         "use_case": cfg["name"],
         "days_simulated": args.days,
         "total_events": len(events),
         "seed": args.seed,
-        "generated_at": datetime.now().isoformat(),
+        "generated_at": SIMULATION_START.isoformat(),
         "state_summary": state_counts,
         "flag_summary": flag_counts,
         "events": events,
