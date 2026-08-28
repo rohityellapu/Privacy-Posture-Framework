@@ -86,9 +86,9 @@ def detect(event: dict) -> List[dict]:
             detections.append({
                 "recipient": "email_marketing_vendor",
                 "recipient_role": "processor",
-                "dpa_required": true,
-                "dpa_in_place": false,
-                "legal_basis_documented": true,
+                "dpa_required": True,
+                "dpa_in_place": False,
+                "legal_basis_documented": True,
                 "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
                 "flag": "SENSITIVE_SHARE_NO_DPA",
                 "severity": "CRITICAL",

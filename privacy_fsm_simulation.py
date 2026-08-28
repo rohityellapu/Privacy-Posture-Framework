@@ -108,7 +108,7 @@ USE_CASE_CONFIGS = {
                 "dpa_schedule_1_condition":
                     "Applicable Schedule 1 condition"
             }
-        }
+        },
         "expected_events_per_day": 40,
         "incident_labels": [
             "unauthorised_patient_record_access",
@@ -116,10 +116,6 @@ USE_CASE_CONFIGS = {
             "patient_list_exported_to_usb",
             "gp_accessing_records_outside_caseload",
         ],
-         transition_graph = cfg.get(
-            "transition_graph",
-            FSM_GRAPH
-        )
     },
     "SCHOOL": {
         "use_case_id": "UC002",
@@ -151,10 +147,6 @@ USE_CASE_CONFIGS = {
             "grades_shared_with_marketing_agency",
             "parental_consent_not_obtained_before_photo_sharing",
         ],
-        transition_graph = cfg.get(
-            "transition_graph",
-            FSM_GRAPH
-        )
     },
     "HOTEL": {
         "use_case_id": "UC003",
@@ -184,10 +176,6 @@ USE_CASE_CONFIGS = {
             "cctv_footage_retained_beyond_30_days",
             "loyalty_db_accessible_by_housekeeping_staff",
         ],
-         transition_graph = cfg.get(
-            "transition_graph",
-            FSM_GRAPH
-        )
     },
 }
 

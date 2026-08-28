@@ -103,7 +103,7 @@ def run_all_evaluations(days: int = 5, seed: int = 99) -> dict:
             combined_rating = "STRONG"
         elif combined_score >= 75:
             combined_rating = "MODERATE"
-        elif combined_score >= 55:
+        elif combined_score >= 50:
             combined_rating = "WEAK"
         else:
             combined_rating = "CRITICAL"
