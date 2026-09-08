@@ -1,20 +1,25 @@
 {
-  "report_id": "CHK-UC003-20260810181135",
+  "report_id": "CHK-UC003-20260908112216",
   "use_case_id": "UC003",
   "use_case_name": "Hotel",
   "manifest_id": "MAN-UC003",
-  "checked_at": "2026-08-10T18:11:35.164569",
+  "checked_at": "2026-09-08T11:22:16.094742",
   "summary": {
-    "total_checks": 27,
-    "pass": 14,
+    "total_checks": 28,
+    "pass": 15,
     "fail": 12,
     "warning": 0,
     "info": 1,
-    "posture_score_percent": 53.8,
+    "posture_score_percent": 55.6,
     "posture_rating": "WEAK",
     "critical_failures": 3
   },
   "findings": [
+    {
+      "control": "schema.validation",
+      "status": "PASS",
+      "detail": "Use-case conforms to Privacy Posture Framework schema."
+    },
     {
       "control": "encryption.at_rest",
       "status": "PASS",

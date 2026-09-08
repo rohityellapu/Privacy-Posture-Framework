@@ -1,12 +1,12 @@
 {
-  "report_id": "CHK-UC002-20260810181135",
+  "report_id": "CHK-UC002-20260908112216",
   "use_case_id": "UC002",
   "use_case_name": "School",
   "manifest_id": "MAN-UC002",
-  "checked_at": "2026-08-10T18:11:35.121307",
+  "checked_at": "2026-09-08T11:22:16.080120",
   "summary": {
-    "total_checks": 35,
-    "pass": 35,
+    "total_checks": 34,
+    "pass": 34,
     "fail": 0,
     "warning": 0,
     "info": 0,
@@ -15,6 +15,11 @@
     "critical_failures": 0
   },
   "findings": [
+    {
+      "control": "schema.validation",
+      "status": "PASS",
+      "detail": "Use-case conforms to Privacy Posture Framework schema."
+    },
     {
       "control": "encryption.at_rest",
       "status": "PASS",
@@ -96,11 +101,6 @@
       "detail": "Policy 'dsar_procedure' is in place."
     },
     {
-      "control": "consent.explicit_consent_required",
-      "status": "PASS",
-      "detail": "Consent control 'explicit_consent_required' is satisfied."
-    },
-    {
       "control": "consent.withdrawal_mechanism_required",
       "status": "PASS",
       "detail": "Consent control 'withdrawal_mechanism_required' is satisfied."
@@ -109,11 +109,6 @@
       "control": "consent.consent_audit_trail_required",
       "status": "PASS",
       "detail": "Consent control 'consent_audit_trail_required' is satisfied."
-    },
-    {
-      "control": "consent.parental_consent",
-      "status": "PASS",
-      "detail": "Parental consent for minors is in place."
     },
     {
       "control": "data_flows.collection.consent",

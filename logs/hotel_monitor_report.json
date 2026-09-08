@@ -1,10 +1,14 @@
 {
-  "report_id": "MON-HOTEL-20260810181135",
+  "report_id": "MON-HOTEL-20260908112216",
   "use_case": "Hotel",
-  "generated_at": "2026-08-10T18:11:35.195388",
+  "generated_at": "2026-09-08T11:22:16.107584",
   "total_events_processed": 300,
   "total_violations_detected": 44,
-  "compliance_rate_percent": 85.3,
+  "violating_event_count": 40,
+  "event_violation_rate_percent": 13.3,
+  "event_compliance_rate_percent": 86.7,
+  "violation_signal_rate_percent": 14.7,
+  "compliance_rate_percent": 86.7,
   "overall_posture": "CRITICAL",
   "severity_breakdown": {
     "CRITICAL": 23,
@@ -44,12 +48,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-06T09:21:00",
+      "event_id": "2026-01-01T09:21:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "check_out_date",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.195171"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -57,12 +63,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-06T09:31:00",
+      "event_id": "2026-01-01T09:31:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "finance",
       "data_type": "meal_preferences",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.195181"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -70,12 +78,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-06T12:24:00",
+      "event_id": "2026-01-01T12:24:00",
       "event_type": "DATA_COLLECTION",
       "actor": "housekeeping",
       "data_type": "email_address",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195188"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -83,12 +93,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-06T14:02:00",
+      "event_id": "2026-01-01T14:02:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "it_admin",
       "data_type": "check_out_date",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195196"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -96,12 +108,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-06T14:36:00",
+      "event_id": "2026-01-01T14:36:00",
       "event_type": "DATA_COLLECTION",
       "actor": "manager",
       "data_type": "email_address",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195199"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -109,12 +123,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-06T15:22:00",
+      "event_id": "2026-01-01T15:22:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "passport_number",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.195203"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -122,12 +138,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-06T17:34:00",
+      "event_id": "2026-01-01T17:34:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "housekeeping",
       "data_type": "full_name",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.195208"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -135,12 +153,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-06T17:56:00",
+      "event_id": "2026-01-01T17:56:00",
       "event_type": "DATA_SHARING",
       "actor": "manager",
       "data_type": "credit_card_number",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.195211"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -148,12 +168,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T10:45:00",
+      "event_id": "2026-01-02T10:45:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "finance",
       "data_type": "passport_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195218"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -161,12 +183,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-07T11:54:00",
+      "event_id": "2026-01-02T11:54:00",
       "event_type": "DATA_ACCESS",
       "actor": "front_desk",
       "data_type": "room_number",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.195222"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -174,12 +198,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-07T11:54:00",
+      "event_id": "2026-01-02T11:54:00",
       "event_type": "DATA_ACCESS",
       "actor": "front_desk",
       "data_type": "room_number",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.195224"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -187,12 +213,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-07T12:01:00",
+      "event_id": "2026-01-02T12:01:00",
       "event_type": "DATA_SHARING",
       "actor": "front_desk",
       "data_type": "full_name",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.195227"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -200,12 +228,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-07T14:01:00",
+      "event_id": "2026-01-02T14:01:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "manager",
       "data_type": "email_address",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.195232"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "UNAUTHORISED_ROLE_ACCESSING_SENSITIVE_DATA",
@@ -213,12 +243,14 @@
       "severity": "HIGH",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_access_and_review_rbac",
-      "event_id": "2026-01-07T16:35:00",
+      "event_id": "2026-01-02T16:35:00",
       "event_type": "DATA_ACCESS",
       "actor": "housekeeping",
       "data_type": "credit_card_number",
-      "action_taken": "ACCESS_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.195239"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ACCESS_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -226,12 +258,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-07T17:26:00",
+      "event_id": "2026-01-02T17:26:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "room_number",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.195242"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -239,12 +273,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T08:16:00",
+      "event_id": "2026-01-03T08:16:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "manager",
       "data_type": "email_address",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195245"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -252,12 +288,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-08T09:35:00",
+      "event_id": "2026-01-03T09:35:00",
       "event_type": "DATA_COLLECTION",
       "actor": "housekeeping",
       "data_type": "loyalty_programme_id",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195250"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -265,12 +303,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-08T09:51:00",
+      "event_id": "2026-01-03T09:51:00",
       "event_type": "DATA_ACCESS",
       "actor": "front_desk",
       "data_type": "meal_preferences",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.195253"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -278,12 +318,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T11:13:00",
+      "event_id": "2026-01-03T11:13:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "manager",
       "data_type": "full_name",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195257"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -291,12 +333,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T12:35:00",
+      "event_id": "2026-01-03T12:35:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "manager",
       "data_type": "passport_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195261"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -304,12 +348,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T12:47:00",
+      "event_id": "2026-01-03T12:47:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "housekeeping",
       "data_type": "email_address",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195263"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -317,12 +363,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T14:41:00",
+      "event_id": "2026-01-03T14:41:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "front_desk",
       "data_type": "check_out_date",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195268"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -330,12 +378,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-09T10:44:00",
+      "event_id": "2026-01-04T10:44:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "housekeeping",
       "data_type": "room_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195277"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -343,12 +393,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-09T11:59:00",
+      "event_id": "2026-01-04T11:59:00",
       "event_type": "DATA_COLLECTION",
       "actor": "front_desk",
       "data_type": "meal_preferences",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195281"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -356,12 +408,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-09T12:23:00",
+      "event_id": "2026-01-04T12:23:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_admin",
       "data_type": "booking_reference",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.195284"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -369,12 +423,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-09T13:19:00",
+      "event_id": "2026-01-04T13:19:00",
       "event_type": "DATA_SHARING",
       "actor": "it_admin",
       "data_type": "meal_preferences",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.195289"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -382,12 +438,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-09T13:19:00",
+      "event_id": "2026-01-04T13:19:00",
       "event_type": "DATA_SHARING",
       "actor": "it_admin",
       "data_type": "meal_preferences",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.195290"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -395,12 +453,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-09T15:35:00",
+      "event_id": "2026-01-04T15:35:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "finance",
       "data_type": "email_address",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.195294"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -408,12 +468,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-09T16:20:00",
+      "event_id": "2026-01-04T16:20:00",
       "event_type": "DATA_ACCESS",
       "actor": "manager",
       "data_type": "passport_number",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.195297"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -421,12 +483,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-09T17:35:00",
+      "event_id": "2026-01-04T17:35:00",
       "event_type": "DATA_COLLECTION",
       "actor": "finance",
       "data_type": "passport_number",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195302"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_WITHOUT_CONSENT",
@@ -434,12 +498,14 @@
       "severity": "CRITICAL",
       "violation_type": "consent_violation",
       "recommended_action": "suppress_or_delete_data_notify_dpo",
-      "event_id": "2026-01-09T17:35:00",
+      "event_id": "2026-01-04T17:35:00",
       "event_type": "DATA_COLLECTION",
       "actor": "finance",
       "data_type": "passport_number",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195303"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -447,12 +513,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-10T10:21:00",
+      "event_id": "2026-01-05T10:21:00",
       "event_type": "DATA_COLLECTION",
       "actor": "finance",
       "data_type": "meal_preferences",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195309"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -460,12 +528,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T11:40:00",
+      "event_id": "2026-01-05T11:40:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "it_admin",
       "data_type": "room_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195313"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -473,12 +543,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T11:49:00",
+      "event_id": "2026-01-05T11:49:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "front_desk",
       "data_type": "passport_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195315"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -486,12 +558,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T11:57:00",
+      "event_id": "2026-01-05T11:57:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "housekeeping",
       "data_type": "loyalty_programme_id",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195317"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -499,12 +573,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T12:13:00",
+      "event_id": "2026-01-05T12:13:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "front_desk",
       "data_type": "room_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195319"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -512,12 +588,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T12:33:00",
+      "event_id": "2026-01-05T12:33:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "manager",
       "data_type": "room_number",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195322"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -525,12 +603,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-10T13:43:00",
+      "event_id": "2026-01-05T13:43:00",
       "event_type": "DATA_COLLECTION",
       "actor": "housekeeping",
       "data_type": "full_name",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195326"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -538,12 +618,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-10T16:32:00",
+      "event_id": "2026-01-05T16:32:00",
       "event_type": "DATA_COLLECTION",
       "actor": "finance",
       "data_type": "credit_card_number",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195331"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_WITHOUT_CONSENT",
@@ -551,12 +633,14 @@
       "severity": "CRITICAL",
       "violation_type": "consent_violation",
       "recommended_action": "suppress_or_delete_data_notify_dpo",
-      "event_id": "2026-01-10T16:32:00",
+      "event_id": "2026-01-05T16:32:00",
       "event_type": "DATA_COLLECTION",
       "actor": "finance",
       "data_type": "credit_card_number",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.195333"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -564,12 +648,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-11T08:10:00",
+      "event_id": "2026-01-06T08:10:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "finance",
       "data_type": "loyalty_programme_id",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.195336"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "UNAUTHORISED_ROLE_ACCESSING_SENSITIVE_DATA",
@@ -577,12 +663,14 @@
       "severity": "HIGH",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_access_and_review_rbac",
-      "event_id": "2026-01-11T09:19:00",
+      "event_id": "2026-01-06T09:19:00",
       "event_type": "DATA_ACCESS",
       "actor": "housekeeping",
       "data_type": "credit_card_number",
-      "action_taken": "ACCESS_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.195340"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ACCESS_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -590,12 +678,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-11T16:34:00",
+      "event_id": "2026-01-06T16:34:00",
       "event_type": "DATA_ACCESS",
       "actor": "front_desk",
       "data_type": "room_number",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.195350"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -603,12 +693,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-12T08:25:00",
+      "event_id": "2026-01-07T08:25:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "it_admin",
       "data_type": "credit_card_number",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.195354"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     }
   ]
 }

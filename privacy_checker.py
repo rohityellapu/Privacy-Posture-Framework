@@ -447,7 +447,7 @@ def calculate_posture_rating(
     if posture_score >= 90:
         return "STRONG"
 
-    if posture_score >= 70:
+    if posture_score >= 75:
         return "MODERATE"
 
     if posture_score >= 50:

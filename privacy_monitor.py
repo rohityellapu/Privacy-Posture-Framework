@@ -249,7 +249,7 @@ def calculate_runtime_metrics(
 
     total_events = max(total_events, 1)
 
-    violation_signal_count = len(all_actions)
+    total_violations_detected = len(all_actions)
 
     violating_event_ids = {
         action.get("event_id")
@@ -275,7 +275,7 @@ def calculate_runtime_metrics(
     )
 
     signal_rate = round(
-        violation_signal_count /
+        total_violations_detected /
         total_events *
         100,
         1
@@ -283,8 +283,8 @@ def calculate_runtime_metrics(
 
     return {
         "total_events": total_events,
-        "violation_signal_count":
-            violation_signal_count,
+        "total_violations_detected":
+            total_violations_detected,
         "violating_event_count":
             violating_event_count,
         "event_violation_rate_percent":
@@ -316,7 +316,7 @@ def report(use_case: str, all_actions: List[dict], total_events: int) -> dict:
         et = a.get("event_type", "UNKNOWN")
         lifecycle_issues[et] = lifecycle_issues.get(et, 0) + 1
 
-    violation_signal_count  = len(all_actions)
+    total_violations_detected  = len(all_actions)
    
     if sev_counts["CRITICAL"] > 0:
         overall_posture = "CRITICAL"
@@ -338,7 +338,7 @@ def report(use_case: str, all_actions: List[dict], total_events: int) -> dict:
         "use_case": use_case,
         "generated_at": datetime.now().isoformat(),
         "total_events_processed": total_events,
-        "violation_signal_count": metrics["violation_signal_count"],
+        "total_violations_detected": metrics["total_violations_detected"],
         "violating_event_count": metrics["violating_event_count"],
         "event_violation_rate_percent": metrics["event_violation_rate_percent"],
         "event_compliance_rate_percent": metrics["event_compliance_rate_percent"],
@@ -388,7 +388,7 @@ def main():
     print(f"  Privacy Monitor Report — {rep['use_case']}")
     print(f"{'='*60}")
     print(f"  Events processed : {rep['total_events_processed']}")
-    print(f"  Violations found : {rep['violation_signal_count _detected']}")
+    print(f"  Violations found : {rep['total_violations_detected']}")
     print(f"  Compliance rate  : {rep['compliance_rate_percent']}%")
     print(f"  Posture          : {rep['overall_posture']}")
     print(f"  Severity         : {rep['severity_breakdown']}")

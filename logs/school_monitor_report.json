@@ -1,10 +1,14 @@
 {
-  "report_id": "MON-SCHOOL-20260810181135",
+  "report_id": "MON-SCHOOL-20260908112216",
   "use_case": "School",
-  "generated_at": "2026-08-10T18:11:35.152527",
+  "generated_at": "2026-09-08T11:22:16.090233",
   "total_events_processed": 250,
   "total_violations_detected": 58,
-  "compliance_rate_percent": 76.8,
+  "violating_event_count": 47,
+  "event_violation_rate_percent": 18.8,
+  "event_compliance_rate_percent": 81.2,
+  "violation_signal_rate_percent": 23.2,
+  "compliance_rate_percent": 81.2,
   "overall_posture": "CRITICAL",
   "severity_breakdown": {
     "CRITICAL": 36,
@@ -55,12 +59,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-06T09:21:00",
+      "event_id": "2026-01-01T09:21:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_support",
       "data_type": "parent_contact_details",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.152288"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -68,12 +74,14 @@
       "severity": "MEDIUM",
       "violation_type": "retention_violation",
       "recommended_action": "trigger_retention_review",
-      "event_id": "2026-01-06T11:38:00",
+      "event_id": "2026-01-01T11:38:00",
       "event_type": "DATA_RETENTION_REVIEW",
       "actor": "safeguarding_officer",
       "data_type": "disciplinary_records",
-      "action_taken": "RETENTION_REVIEW_TRIGGERED",
-      "actioned_at": "2026-08-10T18:11:35.152301"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "RETENTION_REVIEW_TRIGGERED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -81,12 +89,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-06T13:30:00",
+      "event_id": "2026-01-01T13:30:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "safeguarding_officer",
       "data_type": "special_educational_needs",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152309"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -94,12 +104,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-06T14:16:00",
+      "event_id": "2026-01-01T14:16:00",
       "event_type": "DATA_ACCESS",
       "actor": "teacher",
       "data_type": "student_id",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.152312"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -107,12 +119,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-06T14:22:00",
+      "event_id": "2026-01-01T14:22:00",
       "event_type": "DATA_SHARING",
       "actor": "safeguarding_officer",
       "data_type": "attendance_records",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.152318"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -120,12 +134,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-06T14:22:00",
+      "event_id": "2026-01-01T14:22:00",
       "event_type": "DATA_SHARING",
       "actor": "safeguarding_officer",
       "data_type": "attendance_records",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152320"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -133,12 +149,14 @@
       "severity": "HIGH",
       "violation_type": "transfer_violation",
       "recommended_action": "block_transfer_and_notify_dpo",
-      "event_id": "2026-01-06T14:22:00",
+      "event_id": "2026-01-01T14:22:00",
       "event_type": "DATA_SHARING",
       "actor": "safeguarding_officer",
       "data_type": "attendance_records",
-      "action_taken": "TRANSFER_BLOCKED",
-      "actioned_at": "2026-08-10T18:11:35.152321"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "TRANSFER_BLOCKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -146,12 +164,14 @@
       "severity": "CRITICAL",
       "violation_type": "encryption_violation",
       "recommended_action": "encrypt_data_immediately_and_alert_dpo",
-      "event_id": "2026-01-06T17:34:00",
+      "event_id": "2026-01-01T17:34:00",
       "event_type": "DATA_STORAGE",
       "actor": "teacher",
       "data_type": "disciplinary_records",
-      "action_taken": "ALERT_RAISED",
-      "actioned_at": "2026-08-10T18:11:35.152327"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ALERT_RAISED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -159,12 +179,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-06T17:53:00",
+      "event_id": "2026-01-01T17:53:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "it_support",
       "data_type": "full_name",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.152330"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -172,12 +194,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T08:00:00",
+      "event_id": "2026-01-02T08:00:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "admin_staff",
       "data_type": "special_educational_needs",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152333"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -185,12 +209,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T08:59:00",
+      "event_id": "2026-01-02T08:59:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "teacher",
       "data_type": "free_school_meal_eligibility",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152337"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -198,12 +224,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-07T09:36:00",
+      "event_id": "2026-01-02T09:36:00",
       "event_type": "DATA_COLLECTION",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152341"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_WITHOUT_CONSENT",
@@ -211,12 +239,14 @@
       "severity": "CRITICAL",
       "violation_type": "consent_violation",
       "recommended_action": "suppress_or_delete_data_notify_dpo",
-      "event_id": "2026-01-07T09:36:00",
+      "event_id": "2026-01-02T09:36:00",
       "event_type": "DATA_COLLECTION",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152343"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -224,12 +254,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-07T09:56:00",
+      "event_id": "2026-01-02T09:56:00",
       "event_type": "DATA_ACCESS",
       "actor": "headteacher",
       "data_type": "disciplinary_records",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.152346"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -237,12 +269,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-07T11:09:00",
+      "event_id": "2026-01-02T11:09:00",
       "event_type": "DATA_ACCESS",
       "actor": "safeguarding_officer",
       "data_type": "student_id",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.152350"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -250,12 +284,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-07T12:00:00",
+      "event_id": "2026-01-02T12:00:00",
       "event_type": "DATA_SHARING",
       "actor": "safeguarding_officer",
       "data_type": "disciplinary_records",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.152355"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -263,12 +299,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-07T12:00:00",
+      "event_id": "2026-01-02T12:00:00",
       "event_type": "DATA_SHARING",
       "actor": "safeguarding_officer",
       "data_type": "disciplinary_records",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152356"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
@@ -276,12 +314,14 @@
       "severity": "CRITICAL",
       "violation_type": "sensitive_data_legal_violation",
       "recommended_action": "halt_sharing_notify_dpo_obtain_dpa",
-      "event_id": "2026-01-07T12:00:00",
+      "event_id": "2026-01-02T12:00:00",
       "event_type": "DATA_SHARING",
       "actor": "safeguarding_officer",
       "data_type": "disciplinary_records",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152357"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -289,12 +329,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-07T13:10:00",
+      "event_id": "2026-01-02T13:10:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "safeguarding_officer",
       "data_type": "special_educational_needs",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.152361"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -302,12 +344,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T14:10:00",
+      "event_id": "2026-01-02T14:10:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "admin_staff",
       "data_type": "date_of_birth",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152364"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -315,12 +359,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T14:24:00",
+      "event_id": "2026-01-02T14:24:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "admin_staff",
       "data_type": "date_of_birth",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152367"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -328,12 +374,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-07T15:51:00",
+      "event_id": "2026-01-02T15:51:00",
       "event_type": "DATA_ACCESS",
       "actor": "headteacher",
       "data_type": "student_id",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.152371"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -341,12 +389,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-07T16:38:00",
+      "event_id": "2026-01-02T16:38:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "teacher",
       "data_type": "free_school_meal_eligibility",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152375"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -354,12 +404,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-08T08:00:00",
+      "event_id": "2026-01-03T08:00:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.152379"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -367,12 +419,14 @@
       "severity": "CRITICAL",
       "violation_type": "access_control_violation",
       "recommended_action": "revoke_session_and_alert_security_team",
-      "event_id": "2026-01-08T09:43:00",
+      "event_id": "2026-01-03T09:43:00",
       "event_type": "DATA_ACCESS",
       "actor": "admin_staff",
       "data_type": "free_school_meal_eligibility",
-      "action_taken": "SESSION_REVOKED",
-      "actioned_at": "2026-08-10T18:11:35.152384"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SESSION_REVOKED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -380,12 +434,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T09:48:00",
+      "event_id": "2026-01-03T09:48:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "safeguarding_officer",
       "data_type": "grades",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152386"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -393,12 +449,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T10:00:00",
+      "event_id": "2026-01-03T10:00:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "teacher",
       "data_type": "disciplinary_records",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152389"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -406,12 +464,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T11:28:00",
+      "event_id": "2026-01-03T11:28:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "teacher",
       "data_type": "student_id",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152393"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -419,12 +479,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T12:50:00",
+      "event_id": "2026-01-03T12:50:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "teacher",
       "data_type": "grades",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152396"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -432,12 +494,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T13:02:00",
+      "event_id": "2026-01-03T13:02:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "admin_staff",
       "data_type": "full_name",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152399"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -445,12 +509,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-08T15:00:00",
+      "event_id": "2026-01-03T15:00:00",
       "event_type": "DATA_COLLECTION",
       "actor": "safeguarding_officer",
       "data_type": "disciplinary_records",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152404"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_WITHOUT_CONSENT",
@@ -458,12 +524,14 @@
       "severity": "CRITICAL",
       "violation_type": "consent_violation",
       "recommended_action": "suppress_or_delete_data_notify_dpo",
-      "event_id": "2026-01-08T15:00:00",
+      "event_id": "2026-01-03T15:00:00",
       "event_type": "DATA_COLLECTION",
       "actor": "safeguarding_officer",
       "data_type": "disciplinary_records",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152405"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -471,12 +539,14 @@
       "severity": "CRITICAL",
       "violation_type": "encryption_violation",
       "recommended_action": "encrypt_data_immediately_and_alert_dpo",
-      "event_id": "2026-01-08T15:08:00",
+      "event_id": "2026-01-03T15:08:00",
       "event_type": "DATA_STORAGE",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "ALERT_RAISED",
-      "actioned_at": "2026-08-10T18:11:35.152408"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ALERT_RAISED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -484,12 +554,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-08T15:25:00",
+      "event_id": "2026-01-03T15:25:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "headteacher",
       "data_type": "grades",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152411"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -497,12 +569,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-08T16:41:00",
+      "event_id": "2026-01-03T16:41:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_support",
       "data_type": "full_name",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.152414"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -510,12 +584,14 @@
       "severity": "CRITICAL",
       "violation_type": "encryption_violation",
       "recommended_action": "encrypt_data_immediately_and_alert_dpo",
-      "event_id": "2026-01-08T17:40:00",
+      "event_id": "2026-01-03T17:40:00",
       "event_type": "DATA_STORAGE",
       "actor": "safeguarding_officer",
       "data_type": "special_educational_needs",
-      "action_taken": "ALERT_RAISED",
-      "actioned_at": "2026-08-10T18:11:35.152418"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "ALERT_RAISED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -523,12 +599,14 @@
       "severity": "HIGH",
       "violation_type": "deletion_violation",
       "recommended_action": "re_delete_securely_and_audit",
-      "event_id": "2026-01-09T08:54:00",
+      "event_id": "2026-01-04T08:54:00",
       "event_type": "DATA_DELETION",
       "actor": "safeguarding_officer",
       "data_type": "grades",
-      "action_taken": "REDELETION_QUEUED",
-      "actioned_at": "2026-08-10T18:11:35.152424"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "REDELETION_QUEUED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -536,12 +614,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-09T09:15:00",
+      "event_id": "2026-01-04T09:15:00",
       "event_type": "DATA_COLLECTION",
       "actor": "teacher",
       "data_type": "student_id",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152426"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -549,12 +629,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-09T10:40:00",
+      "event_id": "2026-01-04T10:40:00",
       "event_type": "DATA_SHARING",
       "actor": "teacher",
       "data_type": "parent_contact_details",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152430"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -562,12 +644,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-09T11:30:00",
+      "event_id": "2026-01-04T11:30:00",
       "event_type": "DATA_ACCESS",
       "actor": "it_support",
       "data_type": "attendance_records",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.152433"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -575,12 +659,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-09T12:26:00",
+      "event_id": "2026-01-04T12:26:00",
       "event_type": "DATA_SHARING",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.152438"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -588,12 +674,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-09T12:26:00",
+      "event_id": "2026-01-04T12:26:00",
       "event_type": "DATA_SHARING",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152439"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
@@ -601,12 +689,14 @@
       "severity": "CRITICAL",
       "violation_type": "sensitive_data_legal_violation",
       "recommended_action": "halt_sharing_notify_dpo_obtain_dpa",
-      "event_id": "2026-01-09T12:26:00",
+      "event_id": "2026-01-04T12:26:00",
       "event_type": "DATA_SHARING",
       "actor": "it_support",
       "data_type": "disciplinary_records",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152440"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -614,12 +704,14 @@
       "severity": "HIGH",
       "violation_type": "legal_violation",
       "recommended_action": "suspend_sharing_and_obtain_dpa",
-      "event_id": "2026-01-09T13:34:00",
+      "event_id": "2026-01-04T13:34:00",
       "event_type": "DATA_SHARING",
       "actor": "headteacher",
       "data_type": "special_educational_needs",
-      "action_taken": "SHARING_SUSPENDED",
-      "actioned_at": "2026-08-10T18:11:35.152445"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_SUSPENDED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -627,12 +719,14 @@
       "severity": "CRITICAL",
       "violation_type": "legal_violation",
       "recommended_action": "halt_sharing_and_document_legal_basis",
-      "event_id": "2026-01-09T13:34:00",
+      "event_id": "2026-01-04T13:34:00",
       "event_type": "DATA_SHARING",
       "actor": "headteacher",
       "data_type": "special_educational_needs",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152446"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_SHARING_WITHOUT_DPA",
@@ -640,12 +734,14 @@
       "severity": "CRITICAL",
       "violation_type": "sensitive_data_legal_violation",
       "recommended_action": "halt_sharing_notify_dpo_obtain_dpa",
-      "event_id": "2026-01-09T13:34:00",
+      "event_id": "2026-01-04T13:34:00",
       "event_type": "DATA_SHARING",
       "actor": "headteacher",
       "data_type": "special_educational_needs",
-      "action_taken": "SHARING_HALTED",
-      "actioned_at": "2026-08-10T18:11:35.152447"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "SHARING_HALTED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -653,12 +749,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-09T13:59:00",
+      "event_id": "2026-01-04T13:59:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "safeguarding_officer",
       "data_type": "full_name",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152450"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -666,12 +764,14 @@
       "severity": "HIGH",
       "violation_type": "audit_trail_violation",
       "recommended_action": "retroactively_log_and_investigate",
-      "event_id": "2026-01-09T14:42:00",
+      "event_id": "2026-01-04T14:42:00",
       "event_type": "DATA_ACCESS",
       "actor": "teacher",
       "data_type": "grades",
-      "action_taken": "INVESTIGATION_OPENED",
-      "actioned_at": "2026-08-10T18:11:35.152453"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INVESTIGATION_OPENED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -679,12 +779,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-09T15:57:00",
+      "event_id": "2026-01-04T15:57:00",
       "event_type": "DATA_COLLECTION",
       "actor": "safeguarding_officer",
       "data_type": "grades",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152456"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -692,12 +794,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T10:56:00",
+      "event_id": "2026-01-05T10:56:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "headteacher",
       "data_type": "special_educational_needs",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152464"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -705,12 +809,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T11:16:00",
+      "event_id": "2026-01-05T11:16:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "teacher",
       "data_type": "special_educational_needs",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152467"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -718,12 +824,14 @@
       "severity": "MEDIUM",
       "violation_type": "compliance_violation",
       "recommended_action": "escalate_to_compliance_team",
-      "event_id": "2026-01-10T12:40:00",
+      "event_id": "2026-01-05T12:40:00",
       "event_type": "COMPLIANCE_CHECK",
       "actor": "teacher",
       "data_type": "full_name",
-      "action_taken": "COMPLIANCE_ESCALATION",
-      "actioned_at": "2026-08-10T18:11:35.152471"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "COMPLIANCE_ESCALATION",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -731,12 +839,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T12:47:00",
+      "event_id": "2026-01-05T12:47:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "it_support",
       "data_type": "student_id",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152473"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -744,12 +854,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-10T13:23:00",
+      "event_id": "2026-01-05T13:23:00",
       "event_type": "DATA_COLLECTION",
       "actor": "admin_staff",
       "data_type": "parent_contact_details",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152476"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "POLICY_VIOLATION",
@@ -757,12 +869,14 @@
       "severity": "HIGH",
       "violation_type": "consent_violation",
       "recommended_action": "request_retroactive_consent_or_suppress_data",
-      "event_id": "2026-01-10T15:34:00",
+      "event_id": "2026-01-05T15:34:00",
       "event_type": "DATA_COLLECTION",
       "actor": "admin_staff",
       "data_type": "disciplinary_records",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152481"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "SENSITIVE_DATA_WITHOUT_CONSENT",
@@ -770,12 +884,14 @@
       "severity": "CRITICAL",
       "violation_type": "consent_violation",
       "recommended_action": "suppress_or_delete_data_notify_dpo",
-      "event_id": "2026-01-10T15:34:00",
+      "event_id": "2026-01-05T15:34:00",
       "event_type": "DATA_COLLECTION",
       "actor": "admin_staff",
       "data_type": "disciplinary_records",
-      "action_taken": "DATA_SUPPRESSED",
-      "actioned_at": "2026-08-10T18:11:35.152482"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "DATA_SUPPRESSED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -783,12 +899,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-10T17:03:00",
+      "event_id": "2026-01-05T17:03:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "headteacher",
       "data_type": "full_name",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152486"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     },
     {
       "signal_type": "INCIDENT",
@@ -796,12 +914,14 @@
       "severity": "CRITICAL",
       "violation_type": "privacy_incident",
       "recommended_action": "initiate_incident_response_procedure",
-      "event_id": "2026-01-11T08:00:00",
+      "event_id": "2026-01-06T08:00:00",
       "event_type": "INCIDENT_DETECTED",
       "actor": "it_support",
       "data_type": "attendance_records",
-      "action_taken": "INCIDENT_RESPONSE_INITIATED",
-      "actioned_at": "2026-08-10T18:11:35.152489"
+      "action_mode": "SIMULATED",
+      "action_executed": false,
+      "simulated_action": "INCIDENT_RESPONSE_INITIATED",
+      "actioned_at": null
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "report_id": "MON-GP SURGERY-20260828232909",
+  "report_id": "MON-GP SURGERY-20260908112216",
   "use_case": "GP Surgery",
-  "generated_at": "2026-08-28T23:29:09.428175",
+  "generated_at": "2026-09-08T11:22:16.075593",
   "total_events_processed": 200,
-  "violation_signal_count": 44,
+  "total_violations_detected": 44,
   "violating_event_count": 38,
   "event_violation_rate_percent": 19.0,
   "event_compliance_rate_percent": 81.0,
